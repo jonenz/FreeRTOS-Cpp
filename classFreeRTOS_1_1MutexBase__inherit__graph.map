@@ -1,0 +1,8 @@
+<map id="FreeRTOS::MutexBase" name="FreeRTOS::MutexBase">
+<area shape="rect" id="node1" title="Base class that provides the standard mutex interface to FreeRTOS::Mutex, FreeRTOS::StaticMutex,..." alt="" coords="195,5,360,32"/>
+<area shape="rect" id="node2" href="$classFreeRTOS_1_1Mutex.html" title="Class that encapsulates the functionality of a FreeRTOS mutex." alt="" coords="5,80,139,107"/>
+<area shape="rect" id="node3" href="$classFreeRTOS_1_1RecursiveMutexBase.html" title="Base class that provides the recursive mutex interface to FreeRTOS::RecursiveMutex and FreeRTOS::Stat..." alt="" coords="163,80,392,107"/>
+<area shape="rect" id="node6" href="$classFreeRTOS_1_1StaticMutex.html" title="Class that encapsulates the functionality of a FreeRTOS mutex." alt="" coords="416,80,587,107"/>
+<area shape="rect" id="node4" href="$classFreeRTOS_1_1RecursiveMutex.html" title="Class that encapsulates the functionality of a FreeRTOS recursive mutex." alt="" coords="68,162,265,189"/>
+<area shape="rect" id="node5" href="$classFreeRTOS_1_1StaticRecursiveMutex.html" title="Class that encapsulates the functionality of a FreeRTOS recursive mutex." alt="" coords="290,155,483,196"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="FreeRTOS::EventGroup" name="FreeRTOS::EventGroup">
+<area shape="rect" id="node1" title="Class that encapsulates the functionality of a FreeRTOS event group." alt="" coords="21,80,189,107"/>
+<area shape="rect" id="node2" href="$classFreeRTOS_1_1EventGroupBase.html" title="Base class that provides the standard event group interface to FreeRTOS::EventGroup and FreeRTOS::Sta..." alt="" coords="5,5,205,32"/>
+</map>

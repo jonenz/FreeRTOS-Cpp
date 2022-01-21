@@ -1,0 +1,7 @@
+<map id="FreeRTOS::SemaphoreBase" name="FreeRTOS::SemaphoreBase">
+<area shape="rect" id="node1" title="Base class that provides the standard semaphore interface to FreeRTOS::BinarySemaphore,..." alt="" coords="5,81,204,108"/>
+<area shape="rect" id="node2" href="$classFreeRTOS_1_1BinarySemaphore.html" title="Class that encapsulates the functionality of a FreeRTOS binary semaphore." alt="" coords="271,5,479,32"/>
+<area shape="rect" id="node3" href="$classFreeRTOS_1_1CountingSemaphore.html" title="Class that encapsulates the functionality of a FreeRTOS counting semaphore." alt="" coords="263,56,487,83"/>
+<area shape="rect" id="node4" href="$classFreeRTOS_1_1StaticBinarySemaphore.html" title="Class that encapsulates the functionality of a FreeRTOS binary semaphore." alt="" coords="252,107,497,133"/>
+<area shape="rect" id="node5" href="$classFreeRTOS_1_1StaticCountingSemaphore.html" title=" " alt="" coords="281,158,468,199"/>
+</map>

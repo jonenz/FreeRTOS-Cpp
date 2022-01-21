@@ -1,0 +1,5 @@
+<map id="FreeRTOS::StreamBufferBase" name="FreeRTOS::StreamBufferBase">
+<area shape="rect" id="node1" title="Base class that provides the standard stream buffer interface to FreeRTOS::StreamBuffer and FreeRTOS:..." alt="" coords="147,5,358,32"/>
+<area shape="rect" id="node2" href="$classFreeRTOS_1_1StaticStreamBuffer.html" title="Class that encapsulates the functionality of a FreeRTOS stream buffer." alt="" coords="5,80,260,107"/>
+<area shape="rect" id="node3" href="$classFreeRTOS_1_1StreamBuffer.html" title="Class that encapsulates the functionality of a FreeRTOS stream buffer." alt="" coords="285,80,463,107"/>
+</map>

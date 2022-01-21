@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classFreeRTOS_1_1MutexBase.html" title="Base class that provides the standard mutex interface to FreeRTOS::Mutex, FreeRTOS::StaticMutex,..." alt="" coords="5,56,171,83"/>
+<area shape="rect" id="node2" href="$classFreeRTOS_1_1Mutex.html" title="Class that encapsulates the functionality of a FreeRTOS mutex." alt="" coords="267,5,400,32"/>
+<area shape="rect" id="node3" href="$classFreeRTOS_1_1RecursiveMutexBase.html" title="Base class that provides the recursive mutex interface to FreeRTOS::RecursiveMutex and FreeRTOS::Stat..." alt="" coords="219,56,448,83"/>
+<area shape="rect" id="node6" href="$classFreeRTOS_1_1StaticMutex.html" title="Class that encapsulates the functionality of a FreeRTOS mutex." alt="" coords="248,107,419,133"/>
+<area shape="rect" id="node4" href="$classFreeRTOS_1_1RecursiveMutex.html" title="Class that encapsulates the functionality of a FreeRTOS recursive mutex." alt="" coords="496,27,693,53"/>
+<area shape="rect" id="node5" href="$classFreeRTOS_1_1StaticRecursiveMutex.html" title="Class that encapsulates the functionality of a FreeRTOS recursive mutex." alt="" coords="498,78,691,119"/>
+</map>

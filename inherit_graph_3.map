@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classFreeRTOS_1_1QueueBase.html" title="Base class that provides the standard queue interface to FreeRTOS::Queue and FreeRTOS::StaticQueue." alt="" coords="5,35,209,61"/>
+<area shape="rect" id="node2" href="$classFreeRTOS_1_1Queue.html" title="Class that encapsulates the functionality of a FreeRTOS queue." alt="" coords="257,5,429,32"/>
+<area shape="rect" id="node3" href="$classFreeRTOS_1_1StaticQueue.html" title="Class that encapsulates the functionality of a FreeRTOS queue." alt="" coords="258,57,429,98"/>
+</map>

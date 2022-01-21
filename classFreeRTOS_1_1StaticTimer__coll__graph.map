@@ -1,0 +1,4 @@
+<map id="FreeRTOS::StaticTimer" name="FreeRTOS::StaticTimer">
+<area shape="rect" id="node1" title="Class that encapsulates the functionality of a FreeRTOS timer." alt="" coords="5,80,172,107"/>
+<area shape="rect" id="node2" href="$classFreeRTOS_1_1TimerBase.html" title="Base class that provides the standard task interface to FreeRTOS::Timer and FreeRTOS::StaticTimer." alt="" coords="7,5,170,32"/>
+</map>

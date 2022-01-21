@@ -1,0 +1,4 @@
+<map id="FreeRTOS::Mutex" name="FreeRTOS::Mutex">
+<area shape="rect" id="node1" title="Class that encapsulates the functionality of a FreeRTOS mutex." alt="" coords="21,80,155,107"/>
+<area shape="rect" id="node2" href="$classFreeRTOS_1_1MutexBase.html" title="Base class that provides the standard mutex interface to FreeRTOS::Mutex, FreeRTOS::StaticMutex,..." alt="" coords="5,5,171,32"/>
+</map>

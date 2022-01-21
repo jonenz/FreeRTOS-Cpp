@@ -1,0 +1,4 @@
+<map id="FreeRTOS::StaticTask&lt; N &gt;" name="FreeRTOS::StaticTask&lt; N &gt;">
+<area shape="rect" id="node1" title="Class that encapsulates the functionality of a FreeRTOS task." alt="" coords="5,80,204,107"/>
+<area shape="rect" id="node2" href="$classFreeRTOS_1_1TaskBase.html" title="Base class that provides the standard task interface to FreeRTOS::Task and FreeRTOS::StaticTask." alt="" coords="28,5,181,32"/>
+</map>

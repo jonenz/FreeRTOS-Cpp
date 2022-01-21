@@ -1,0 +1,4 @@
+<map id="FreeRTOS::MessageBuffer" name="FreeRTOS::MessageBuffer">
+<area shape="rect" id="node1" title="Class that encapsulates the functionality of a FreeRTOS message buffer." alt="" coords="21,80,211,107"/>
+<area shape="rect" id="node2" href="$classFreeRTOS_1_1MessageBufferBase.html" title="Base class that provides the standard message buffer interface to FreeRTOS::MessageBuffer and FreeRTO..." alt="" coords="5,5,227,32"/>
+</map>

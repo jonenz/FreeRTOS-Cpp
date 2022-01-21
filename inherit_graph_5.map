@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classFreeRTOS_1_1StreamBufferBase.html" title="Base class that provides the standard stream buffer interface to FreeRTOS::StreamBuffer and FreeRTOS:..." alt="" coords="5,31,216,57"/>
+<area shape="rect" id="node2" href="$classFreeRTOS_1_1StaticStreamBuffer.html" title="Class that encapsulates the functionality of a FreeRTOS stream buffer." alt="" coords="264,5,519,32"/>
+<area shape="rect" id="node3" href="$classFreeRTOS_1_1StreamBuffer.html" title="Class that encapsulates the functionality of a FreeRTOS stream buffer." alt="" coords="302,56,481,83"/>
+</map>

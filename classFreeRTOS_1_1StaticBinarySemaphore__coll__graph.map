@@ -1,0 +1,4 @@
+<map id="FreeRTOS::StaticBinarySemaphore" name="FreeRTOS::StaticBinarySemaphore">
+<area shape="rect" id="node1" title="Class that encapsulates the functionality of a FreeRTOS binary semaphore." alt="" coords="5,80,251,107"/>
+<area shape="rect" id="node2" href="$classFreeRTOS_1_1SemaphoreBase.html" title="Base class that provides the standard semaphore interface to FreeRTOS::BinarySemaphore,..." alt="" coords="29,5,227,32"/>
+</map>
