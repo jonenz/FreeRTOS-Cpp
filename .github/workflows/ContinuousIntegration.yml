@@ -1,0 +1,61 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  Check-Formatting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ./.github/actions/submodules
+
+    - name: Install Dependencies
+      run: sudo apt install clang-format
+
+    - name: Configure CMake
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+    - name: Run Clang Format
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} -t clang-format-dry-run
+
+  Check-Linter:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ./.github/actions/submodules
+
+    - name: Install Dependencies
+      run: sudo apt install clang-tidy
+
+    - name: Configure CMake
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+    - name: Run Clang Tidy
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} -t clang-tidy
+
+
+  Compile-Examples:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ./.github/actions/submodules
+
+    - name: Install Dependencies
+      run: sudo apt install gcc-arm-none-eabi
+
+    - name: Configure CMake
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_C_COMPILER=arm-none-eabi-gcc -DCMAKE_CXX_COMPILER=arm-none-eabi-g++ -DCMAKE_C_FLAGS="-Werror" -DCMAKE_CXX_FLAGS="-Werror"
+
+    - name: Compile Examples
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} -t example-all

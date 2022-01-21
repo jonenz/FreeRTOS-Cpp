@@ -1,0 +1,38 @@
+name: Doxygen
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  Doxygen:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ./.github/actions/submodules
+
+    - name: Install Dependencies
+      run: sudo apt install doxygen graphviz
+
+    - name: Configure CMake
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+    - name: Run Doxygen
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} -t doxygen
+
+    - name: Archive HTML Output
+      uses: actions/upload-artifact@v2
+      with:
+        name: Doxygen
+        path: ${{github.workspace}}/build/doxygen/html
+
+    - name: Deploy HTML Output
+      uses: peaceiris/actions-gh-pages@v3
+      if: ${{ github.ref == 'refs/heads/main' }}
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ${{github.workspace}}/build/doxygen/html
