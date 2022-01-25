@@ -30,7 +30,7 @@
 
 #include <FreeRTOS/Kernel.hpp>
 #include <bitset>
-#include <tuple>
+#include <utility>
 
 #include "FreeRTOS.h"
 #include "task.h"
@@ -660,7 +660,7 @@ class TaskBase {
    * <b>Example Usage</b>
    * @include Task/notifyAndQuery.cpp
    */
-  inline std::tuple<bool, NotificationBits> notifyAndQuery(
+  inline std::pair<bool, NotificationBits> notifyAndQuery(
       const NotifyAction action, const NotificationBits value = 0,
       const UBaseType_t index = 0) const {
     uint32_t pulNotificationValue;
@@ -669,7 +669,7 @@ class TaskBase {
                                     static_cast<eNotifyAction>(action),
                                     &pulNotificationValue) == pdPASS);
 
-    return std::make_tuple(result, NotificationBits(pulNotificationValue));
+    return std::make_pair(result, NotificationBits(pulNotificationValue));
   }
 
   /**
@@ -745,7 +745,7 @@ class TaskBase {
    * <b>Example Usage</b>
    * @include Task/notifyAndQueryFromISR.cpp
    */
-  inline std::tuple<bool, NotificationBits> notifyAndQueryFromISR(
+  inline std::pair<bool, NotificationBits> notifyAndQueryFromISR(
       bool& higherPriorityTaskWoken, const NotifyAction action,
       const NotificationBits value = 0, const UBaseType_t index = 0) const {
     BaseType_t taskWoken = pdFALSE;
@@ -759,7 +759,7 @@ class TaskBase {
       higherPriorityTaskWoken = true;
     }
 
-    return std::make_tuple(result, NotificationBits(pulNotificationValue));
+    return std::make_pair(result, NotificationBits(pulNotificationValue));
   }
 
   /**
@@ -775,7 +775,7 @@ class TaskBase {
    *
    * @overload
    */
-  inline std::tuple<bool, NotificationBits> notifyAndQueryFromISR(
+  inline std::pair<bool, NotificationBits> notifyAndQueryFromISR(
       const NotifyAction action, const NotificationBits value = 0,
       const UBaseType_t index = 0) const {
     uint32_t pulNotificationValue;
@@ -784,7 +784,7 @@ class TaskBase {
                        static_cast<eNotifyAction>(action),
                        &pulNotificationValue, NULL) == pdPASS);
 
-    return std::make_tuple(result, NotificationBits(pulNotificationValue));
+    return std::make_pair(result, NotificationBits(pulNotificationValue));
   }
 
   /**
@@ -964,7 +964,7 @@ class TaskBase {
    * <b>Example Usage</b>
    * @include Task/notifyWait.cpp
    */
-  inline static std::tuple<bool, NotificationBits> notifyWait(
+  inline static std::pair<bool, NotificationBits> notifyWait(
       const TickType_t ticksToWait = portMAX_DELAY,
       const NotificationBits bitsToClearOnEntry = 0,
       const NotificationBits bitsToClearOnExit = 0,
@@ -974,7 +974,7 @@ class TaskBase {
         (xTaskNotifyWaitIndexed(index, bitsToClearOnEntry.to_ulong(),
                                 bitsToClearOnExit.to_ulong(),
                                 &pulNotificationValue, ticksToWait) == pdTRUE);
-    return std::make_tuple(result, NotificationBits(pulNotificationValue));
+    return std::make_pair(result, NotificationBits(pulNotificationValue));
   }
 
   /**
