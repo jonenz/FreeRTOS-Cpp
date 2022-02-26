@@ -22,7 +22,7 @@ void MyTask::taskFunction() {
     // return value) to wait for a notification.  Bits in this RTOS task's
     // notification value are set by the notifying tasks and interrupts to
     // indicate which events have occurred.
-    auto notifiedValue = std::get<1>(notifyWait());
+    auto notifiedValue = notifyWait().second;
 
     // Process any events that have been latched in the notified value.
     if (notifiedValue[0]) {
