@@ -175,15 +175,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1eeacd6a189750c32bc5afec7437cf47"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFreeRTOS_1_1TaskBase.html#a1eeacd6a189750c32bc5afec7437cf47">notify</a> (const NotifyAction action, const NotificationBits value=0, const UBaseType_t index=0) const</td></tr>
 <tr class="memdesc:a1eeacd6a189750c32bc5afec7437cf47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that calls <code>BaseType_t xTaskNotifyIndexed( TaskHandle_t xTaskToNotify, UBaseType_t uxIndexToNotify, uint32_t ulValue, eNotifyAction eAction )</code>  <a href="classFreeRTOS_1_1TaskBase.html#a1eeacd6a189750c32bc5afec7437cf47">More...</a><br /></td></tr>
 <tr class="separator:a1eeacd6a189750c32bc5afec7437cf47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0fb4b8cf55881008a6de2604ecf5d76"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, NotificationBits &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFreeRTOS_1_1TaskBase.html#af0fb4b8cf55881008a6de2604ecf5d76">notifyAndQuery</a> (const NotifyAction action, const NotificationBits value=0, const UBaseType_t index=0) const</td></tr>
-<tr class="memdesc:af0fb4b8cf55881008a6de2604ecf5d76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that calls <code>BaseType_t xTaskNotifyAndQueryIndexed( TaskHandle_t xTaskToNotify, UBaseType_t uxIndexToNotify, uint32_t ulValue, eNotifyAction eAction, uint32_t *pulPreviousNotifyValue )</code>  <a href="classFreeRTOS_1_1TaskBase.html#af0fb4b8cf55881008a6de2604ecf5d76">More...</a><br /></td></tr>
-<tr class="separator:af0fb4b8cf55881008a6de2604ecf5d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a992bb9b6478bbaa9a6cd5f3647126305"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, NotificationBits &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFreeRTOS_1_1TaskBase.html#a992bb9b6478bbaa9a6cd5f3647126305">notifyAndQueryFromISR</a> (bool &amp;higherPriorityTaskWoken, const NotifyAction action, const NotificationBits value=0, const UBaseType_t index=0) const</td></tr>
-<tr class="memdesc:a992bb9b6478bbaa9a6cd5f3647126305"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that calls <code>BaseType_t xTaskNotifyAndQueryIndexedFromISR( TaskHandle_t xTaskToNotify, UBaseType_t uxIndexToNotify, uint32_t ulValue, eNotifyAction eAction, uint32_t *pulPreviousNotifyValue, BaseType_t *pxHigherPriorityTaskWoken )</code>  <a href="classFreeRTOS_1_1TaskBase.html#a992bb9b6478bbaa9a6cd5f3647126305">More...</a><br /></td></tr>
-<tr class="separator:a992bb9b6478bbaa9a6cd5f3647126305"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afad81dd5f95d58ce2442a2b9b371f3c7"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, NotificationBits &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFreeRTOS_1_1TaskBase.html#afad81dd5f95d58ce2442a2b9b371f3c7">notifyAndQueryFromISR</a> (const NotifyAction action, const NotificationBits value=0, const UBaseType_t index=0) const</td></tr>
-<tr class="memdesc:afad81dd5f95d58ce2442a2b9b371f3c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that calls <code>BaseType_t xTaskNotifyAndQueryIndexedFromISR( TaskHandle_t xTaskToNotify, UBaseType_t uxIndexToNotify, uint32_t ulValue, eNotifyAction eAction, uint32_t *pulPreviousNotifyValue, BaseType_t *pxHigherPriorityTaskWoken )</code>  <a href="classFreeRTOS_1_1TaskBase.html#afad81dd5f95d58ce2442a2b9b371f3c7">More...</a><br /></td></tr>
-<tr class="separator:afad81dd5f95d58ce2442a2b9b371f3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b118731dacb2d0e7a62b2387d8a7ed"><td class="memItemLeft" align="right" valign="top">std::pair&lt; bool, NotificationBits &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFreeRTOS_1_1TaskBase.html#a69b118731dacb2d0e7a62b2387d8a7ed">notifyAndQuery</a> (const NotifyAction action, const NotificationBits value=0, const UBaseType_t index=0) const</td></tr>
+<tr class="memdesc:a69b118731dacb2d0e7a62b2387d8a7ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that calls <code>BaseType_t xTaskNotifyAndQueryIndexed( TaskHandle_t xTaskToNotify, UBaseType_t uxIndexToNotify, uint32_t ulValue, eNotifyAction eAction, uint32_t *pulPreviousNotifyValue )</code>  <a href="classFreeRTOS_1_1TaskBase.html#a69b118731dacb2d0e7a62b2387d8a7ed">More...</a><br /></td></tr>
+<tr class="separator:a69b118731dacb2d0e7a62b2387d8a7ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd3cd604ac587b86537692f4765af246"><td class="memItemLeft" align="right" valign="top">std::pair&lt; bool, NotificationBits &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFreeRTOS_1_1TaskBase.html#abd3cd604ac587b86537692f4765af246">notifyAndQueryFromISR</a> (bool &amp;higherPriorityTaskWoken, const NotifyAction action, const NotificationBits value=0, const UBaseType_t index=0) const</td></tr>
+<tr class="memdesc:abd3cd604ac587b86537692f4765af246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that calls <code>BaseType_t xTaskNotifyAndQueryIndexedFromISR( TaskHandle_t xTaskToNotify, UBaseType_t uxIndexToNotify, uint32_t ulValue, eNotifyAction eAction, uint32_t *pulPreviousNotifyValue, BaseType_t *pxHigherPriorityTaskWoken )</code>  <a href="classFreeRTOS_1_1TaskBase.html#abd3cd604ac587b86537692f4765af246">More...</a><br /></td></tr>
+<tr class="separator:abd3cd604ac587b86537692f4765af246"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d18745b14f35d740f347b2b3c93e58f"><td class="memItemLeft" align="right" valign="top">std::pair&lt; bool, NotificationBits &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFreeRTOS_1_1TaskBase.html#a2d18745b14f35d740f347b2b3c93e58f">notifyAndQueryFromISR</a> (const NotifyAction action, const NotificationBits value=0, const UBaseType_t index=0) const</td></tr>
+<tr class="memdesc:a2d18745b14f35d740f347b2b3c93e58f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that calls <code>BaseType_t xTaskNotifyAndQueryIndexedFromISR( TaskHandle_t xTaskToNotify, UBaseType_t uxIndexToNotify, uint32_t ulValue, eNotifyAction eAction, uint32_t *pulPreviousNotifyValue, BaseType_t *pxHigherPriorityTaskWoken )</code>  <a href="classFreeRTOS_1_1TaskBase.html#a2d18745b14f35d740f347b2b3c93e58f">More...</a><br /></td></tr>
+<tr class="separator:a2d18745b14f35d740f347b2b3c93e58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39240e97fa9685c35ce7bbcafed62963"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFreeRTOS_1_1TaskBase.html#a39240e97fa9685c35ce7bbcafed62963">notifyFromISR</a> (bool &amp;higherPriorityTaskWoken, const NotifyAction action, const NotificationBits value=0, const UBaseType_t index=0) const</td></tr>
 <tr class="memdesc:a39240e97fa9685c35ce7bbcafed62963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that calls <code> BaseType_t xTaskNotifyIndexedFromISR( TaskHandle_t xTaskToNotify, UBaseType_t uxIndexToNotify, uint32_t ulValue, eNotifyAction eAction, BaseType_t *pxHigherPriorityTaskWoken )</code>  <a href="classFreeRTOS_1_1TaskBase.html#a39240e97fa9685c35ce7bbcafed62963">More...</a><br /></td></tr>
 <tr class="separator:a39240e97fa9685c35ce7bbcafed62963"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -217,9 +217,9 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>operator delet
 <tr class="memitem:a94ecb0f412ce0615499f0fcf806d2804"><td class="memItemLeft" align="right" valign="top">static TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFreeRTOS_1_1TaskBase.html#a94ecb0f412ce0615499f0fcf806d2804">getHandle</a> (const char *name)</td></tr>
 <tr class="memdesc:a94ecb0f412ce0615499f0fcf806d2804"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that calls <code>TaskHandle_t xTaskGetHandle( const char *pcNameToQuery )</code>  <a href="classFreeRTOS_1_1TaskBase.html#a94ecb0f412ce0615499f0fcf806d2804">More...</a><br /></td></tr>
 <tr class="separator:a94ecb0f412ce0615499f0fcf806d2804"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61c87bd8ae5115aa98acf120709d9667"><td class="memItemLeft" align="right" valign="top">static std::tuple&lt; bool, NotificationBits &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFreeRTOS_1_1TaskBase.html#a61c87bd8ae5115aa98acf120709d9667">notifyWait</a> (const TickType_t ticksToWait=portMAX_DELAY, const NotificationBits bitsToClearOnEntry=0, const NotificationBits bitsToClearOnExit=0, const UBaseType_t index=0)</td></tr>
-<tr class="memdesc:a61c87bd8ae5115aa98acf120709d9667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that calls <code>BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn, uint32_t ulBitsToClearOnEntry, uint32_t ulBitsToClearOnExit, uint32_t *pulNotificationValue, TickType_t xTicksToWait )</code>  <a href="classFreeRTOS_1_1TaskBase.html#a61c87bd8ae5115aa98acf120709d9667">More...</a><br /></td></tr>
-<tr class="separator:a61c87bd8ae5115aa98acf120709d9667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6155099d7c8440bb189a34a45741eea3"><td class="memItemLeft" align="right" valign="top">static std::pair&lt; bool, NotificationBits &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFreeRTOS_1_1TaskBase.html#a6155099d7c8440bb189a34a45741eea3">notifyWait</a> (const TickType_t ticksToWait=portMAX_DELAY, const NotificationBits bitsToClearOnEntry=0, const NotificationBits bitsToClearOnExit=0, const UBaseType_t index=0)</td></tr>
+<tr class="memdesc:a6155099d7c8440bb189a34a45741eea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that calls <code>BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn, uint32_t ulBitsToClearOnEntry, uint32_t ulBitsToClearOnExit, uint32_t *pulNotificationValue, TickType_t xTicksToWait )</code>  <a href="classFreeRTOS_1_1TaskBase.html#a6155099d7c8440bb189a34a45741eea3">More...</a><br /></td></tr>
+<tr class="separator:a6155099d7c8440bb189a34a45741eea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -756,8 +756,8 @@ getInfo()</dd></dl>
 <p>Each task has a private array of "notification values" (or 'notifications'), each of which is a 32-bit unsigned integer (uint32_t). The constant configTASK_NOTIFICATION_ARRAY_ENTRIES sets the number of indexes in the array, and (for backward compatibility) defaults to 1 if left undefined. Prior to FreeRTOS V10.4.0 there was only one notification value per task.</p>
 <p>Events can be sent to a task using an intermediary object. Examples of such objects are queues, semaphores, mutexes and event groups. <a class="el" href="classFreeRTOS_1_1Task.html" title="Class that encapsulates the functionality of a FreeRTOS task.">Task</a> notifications are a method of sending an event directly to a task without the need for such an intermediary object.</p>
 <p>A notification sent to a task can optionally perform an action, such as update, overwrite or increment one of the task's notification values. In that way task notifications can be used to send data to a task, or be used as light weight and fast binary or counting semaphores.</p>
-<p>A task can use <a class="el" href="classFreeRTOS_1_1TaskBase.html#a61c87bd8ae5115aa98acf120709d9667" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> or <a class="el" href="classFreeRTOS_1_1TaskBase.html#ab7802d619a9c65584dba593d69066e1b" title="Function that calls uint32_t ulTaskNotifyTakeIndexed( UBaseType_t uxIndexToWaitOn,...">notifyTake()</a> to [optionally] block to wait for a notification to be pending. The task does not consume any CPU time while it is in the Blocked state.</p>
-<p>A notification sent to a task will remain pending until it is cleared by the task calling <a class="el" href="classFreeRTOS_1_1TaskBase.html#a61c87bd8ae5115aa98acf120709d9667" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> or <a class="el" href="classFreeRTOS_1_1TaskBase.html#ab7802d619a9c65584dba593d69066e1b" title="Function that calls uint32_t ulTaskNotifyTakeIndexed( UBaseType_t uxIndexToWaitOn,...">notifyTake()</a>. If the task was already in the Blocked state to wait for a notification when the notification arrives then the task will automatically be removed from the Blocked state (unblocked) and the notification cleared.</p>
+<p>A task can use <a class="el" href="classFreeRTOS_1_1TaskBase.html#a6155099d7c8440bb189a34a45741eea3" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> or <a class="el" href="classFreeRTOS_1_1TaskBase.html#ab7802d619a9c65584dba593d69066e1b" title="Function that calls uint32_t ulTaskNotifyTakeIndexed( UBaseType_t uxIndexToWaitOn,...">notifyTake()</a> to [optionally] block to wait for a notification to be pending. The task does not consume any CPU time while it is in the Blocked state.</p>
+<p>A notification sent to a task will remain pending until it is cleared by the task calling <a class="el" href="classFreeRTOS_1_1TaskBase.html#a6155099d7c8440bb189a34a45741eea3" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> or <a class="el" href="classFreeRTOS_1_1TaskBase.html#ab7802d619a9c65584dba593d69066e1b" title="Function that calls uint32_t ulTaskNotifyTakeIndexed( UBaseType_t uxIndexToWaitOn,...">notifyTake()</a>. If the task was already in the Blocked state to wait for a notification when the notification arrives then the task will automatically be removed from the Blocked state (unblocked) and the notification cleared.</p>
 <dl class="section note"><dt>Note</dt><dd>Each notification within the array operates independently - a task can only block on one notification within the array at a time and will not be unblocked by a notification sent to any other array index.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -827,8 +827,8 @@ true Otherwise.</dd></dl>
 </div><!-- fragment --> 
 </div>
 </div>
-<a id="af0fb4b8cf55881008a6de2604ecf5d76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0fb4b8cf55881008a6de2604ecf5d76">&#9670;&nbsp;</a></span>notifyAndQuery()</h2>
+<a id="a69b118731dacb2d0e7a62b2387d8a7ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69b118731dacb2d0e7a62b2387d8a7ed">&#9670;&nbsp;</a></span>notifyAndQuery()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -837,7 +837,7 @@ true Otherwise.</dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt;bool, NotificationBits&gt; FreeRTOS::TaskBase::notifyAndQuery </td>
+          <td class="memname">std::pair&lt;bool, NotificationBits&gt; FreeRTOS::TaskBase::notifyAndQuery </td>
           <td>(</td>
           <td class="paramtype">const NotifyAction&#160;</td>
           <td class="paramname"><em>action</em>, </td>
@@ -870,7 +870,7 @@ true Otherwise.</dd></dl>
 <p>Function that calls <code>BaseType_t xTaskNotifyAndQueryIndexed( TaskHandle_t xTaskToNotify, UBaseType_t uxIndexToNotify, uint32_t ulValue, eNotifyAction eAction, uint32_t *pulPreviousNotifyValue )</code> </p>
 <p><a class="el" href="Task_8hpp_source.html">Task.hpp</a></p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://www.freertos.org/xTaskNotifyAndQuery.html">https://www.freertos.org/xTaskNotifyAndQuery.html</a></dd></dl>
-<p><a class="el" href="classFreeRTOS_1_1TaskBase.html#af0fb4b8cf55881008a6de2604ecf5d76" title="Function that calls BaseType_t xTaskNotifyAndQueryIndexed( TaskHandle_t xTaskToNotify,...">notifyAndQuery()</a> performs the same operation as <a class="el" href="classFreeRTOS_1_1TaskBase.html#a1eeacd6a189750c32bc5afec7437cf47" title="Function that calls BaseType_t xTaskNotifyIndexed( TaskHandle_t xTaskToNotify, UBaseType_t uxIndexToN...">notify()</a> with the addition that it also returns the target task's prior notification value (the notification value at the time the function is called rather than when the function returns).</p>
+<p><a class="el" href="classFreeRTOS_1_1TaskBase.html#a69b118731dacb2d0e7a62b2387d8a7ed" title="Function that calls BaseType_t xTaskNotifyAndQueryIndexed( TaskHandle_t xTaskToNotify,...">notifyAndQuery()</a> performs the same operation as <a class="el" href="classFreeRTOS_1_1TaskBase.html#a1eeacd6a189750c32bc5afec7437cf47" title="Function that calls BaseType_t xTaskNotifyIndexed( TaskHandle_t xTaskToNotify, UBaseType_t uxIndexToN...">notify()</a> with the addition that it also returns the target task's prior notification value (the notification value at the time the function is called rather than when the function returns).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">action</td><td>An enumerated type that can take one of the values documented in the table below in order to perform the associated action. <table class="doxtable">
@@ -915,34 +915,30 @@ true Otherwise.</dd></dl>
 <div class="line">MyTask task4;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> aFunction() {</div>
-<div class="line">  FreeRTOS::Task::NotificationBits previousValue;</div>
+<div class="line">  <span class="keyword">using namespace </span>FreeRTOS;</div>
+<div class="line"> </div>
+<div class="line">  Task::NotificationBits previousValue;</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Set bit 8 in the 0th notification value of task1.  Store the task&#39;s</span></div>
 <div class="line">  <span class="comment">// previous 0th notification value (before bit 8 is set) in previousValue.</span></div>
-<div class="line">  previousValue = std::get&lt;1&gt;(task1.notifyAndQuery(</div>
-<div class="line">      FreeRTOS::Task::NotifyAction::SetBits, (1UL &lt;&lt; 8UL)));</div>
+<div class="line">  previousValue =</div>
+<div class="line">      task1.notifyAndQuery(Task::NotifyAction::SetBits, (1UL &lt;&lt; 8UL)).second;</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Send a notification to task2, potentially removing the task from the</span></div>
 <div class="line">  <span class="comment">// Blocked state, but without updating the task&#39;s notification value.  Store</span></div>
 <div class="line">  <span class="comment">// the tasks notification value in previousValue.</span></div>
-<div class="line">  previousValue =</div>
-<div class="line">      std::get&lt;1&gt;(task2.notifyAndQuery(FreeRTOS::Task::NotifyAction::NoAction));</div>
+<div class="line">  previousValue = task2.notifyAndQuery(Task::NotifyAction::NoAction).second;</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Set the notification value of task3 to 0x50, even if the task had not read</span></div>
 <div class="line">  <span class="comment">// its previous notification value. The task&#39;s previous notification value is</span></div>
 <div class="line">  <span class="comment">// of no interest.</span></div>
-<div class="line">  task3.notifyAndQuery(FreeRTOS::Task::NotifyAction::SetValueWithOverwrite,</div>
-<div class="line">                       0x50);</div>
+<div class="line">  task3.notifyAndQuery(Task::NotifyAction::SetValueWithOverwrite, 0x50);</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Set the notification value of task4 to 0xfff, but only if to do so would</span></div>
 <div class="line">  <span class="comment">// not overwrite the task&#39;s existing notification value before the task had</span></div>
-<div class="line">  <span class="comment">// obtained it (by a call to notifyWait() or notifyTake()).  The task&#39;s</span></div>
-<div class="line">  <span class="comment">// previous notification value is saved in previousValue.</span></div>
-<div class="line">  <span class="keywordtype">bool</span> updated;</div>
-<div class="line">  std::tie(updated, previousValue) = task4.notifyAndQuery(</div>
-<div class="line">      FreeRTOS::Task::NotifyAction::SetValueWithoutOverwrite, 0xfff);</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordflow">if</span> (updated) {</div>
+<div class="line">  <span class="comment">// obtained it (by a call to notifyWait() or notifyTake()).</span></div>
+<div class="line">  <span class="keywordflow">if</span> (task4.notifyAndQuery(Task::NotifyAction::SetValueWithoutOverwrite, 0xfff)</div>
+<div class="line">          .first) {</div>
 <div class="line">    <span class="comment">// The task&#39;s notification value was updated.</span></div>
 <div class="line">  } <span class="keywordflow">else</span> {</div>
 <div class="line">    <span class="comment">// The task&#39;s notification value was not updated.</span></div>
@@ -951,8 +947,8 @@ true Otherwise.</dd></dl>
 </div><!-- fragment --> 
 </div>
 </div>
-<a id="a992bb9b6478bbaa9a6cd5f3647126305"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a992bb9b6478bbaa9a6cd5f3647126305">&#9670;&nbsp;</a></span>notifyAndQueryFromISR() <span class="overload">[1/2]</span></h2>
+<a id="abd3cd604ac587b86537692f4765af246"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd3cd604ac587b86537692f4765af246">&#9670;&nbsp;</a></span>notifyAndQueryFromISR() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -961,7 +957,7 @@ true Otherwise.</dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt;bool, NotificationBits&gt; FreeRTOS::TaskBase::notifyAndQueryFromISR </td>
+          <td class="memname">std::pair&lt;bool, NotificationBits&gt; FreeRTOS::TaskBase::notifyAndQueryFromISR </td>
           <td>(</td>
           <td class="paramtype">bool &amp;&#160;</td>
           <td class="paramname"><em>higherPriorityTaskWoken</em>, </td>
@@ -1000,7 +996,7 @@ true Otherwise.</dd></dl>
 <p>Function that calls <code>BaseType_t xTaskNotifyAndQueryIndexedFromISR( TaskHandle_t xTaskToNotify, UBaseType_t uxIndexToNotify, uint32_t ulValue, eNotifyAction eAction, uint32_t *pulPreviousNotifyValue, BaseType_t *pxHigherPriorityTaskWoken )</code> </p>
 <p><a class="el" href="Task_8hpp_source.html">Task.hpp</a></p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://www.freertos.org/xTaskNotifyAndQueryFromISR.html">https://www.freertos.org/xTaskNotifyAndQueryFromISR.html</a></dd></dl>
-<p><a class="el" href="classFreeRTOS_1_1TaskBase.html#a992bb9b6478bbaa9a6cd5f3647126305" title="Function that calls BaseType_t xTaskNotifyAndQueryIndexedFromISR( TaskHandle_t xTaskToNotify,...">notifyAndQueryFromISR()</a> performs the same operation as <a class="el" href="classFreeRTOS_1_1TaskBase.html#a39240e97fa9685c35ce7bbcafed62963" title="Function that calls  BaseType_t xTaskNotifyIndexedFromISR( TaskHandle_t xTaskToNotify,...">notifyFromISR()</a> with the addition that it also returns the target task's prior notification value (the notification value at the time the function is called rather than at the time the function returns).</p>
+<p><a class="el" href="classFreeRTOS_1_1TaskBase.html#abd3cd604ac587b86537692f4765af246" title="Function that calls BaseType_t xTaskNotifyAndQueryIndexedFromISR( TaskHandle_t xTaskToNotify,...">notifyAndQueryFromISR()</a> performs the same operation as <a class="el" href="classFreeRTOS_1_1TaskBase.html#a39240e97fa9685c35ce7bbcafed62963" title="Function that calls  BaseType_t xTaskNotifyIndexedFromISR( TaskHandle_t xTaskToNotify,...">notifyFromISR()</a> with the addition that it also returns the target task's prior notification value (the notification value at the time the function is called rather than at the time the function returns).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">higherPriorityTaskWoken</td><td>A reference that will be set to true if sending the notification caused a task to unblock, and the unblocked task has a priority higher than the currently running task. If higherPriorityTaskWoken is set to true, then a context switch should be requested before the interrupt is exited. </td></tr>
@@ -1073,8 +1069,8 @@ true Otherwise.</dd></dl>
 </div><!-- fragment --> 
 </div>
 </div>
-<a id="afad81dd5f95d58ce2442a2b9b371f3c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afad81dd5f95d58ce2442a2b9b371f3c7">&#9670;&nbsp;</a></span>notifyAndQueryFromISR() <span class="overload">[2/2]</span></h2>
+<a id="a2d18745b14f35d740f347b2b3c93e58f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d18745b14f35d740f347b2b3c93e58f">&#9670;&nbsp;</a></span>notifyAndQueryFromISR() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1083,7 +1079,7 @@ true Otherwise.</dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt;bool, NotificationBits&gt; FreeRTOS::TaskBase::notifyAndQueryFromISR </td>
+          <td class="memname">std::pair&lt;bool, NotificationBits&gt; FreeRTOS::TaskBase::notifyAndQueryFromISR </td>
           <td>(</td>
           <td class="paramtype">const NotifyAction&#160;</td>
           <td class="paramname"><em>action</em>, </td>
@@ -1259,7 +1255,7 @@ true Otherwise.</dd></dl>
 <div class="line">    <span class="comment">// should not block indefinitely, but instead time out occasionally in order</span></div>
 <div class="line">    <span class="comment">// to handle error conditions that may prevent the interrupt from sending</span></div>
 <div class="line">    <span class="comment">// any more notifications.</span></div>
-<div class="line">    <span class="keyword">auto</span> interruptStatus = std::get&lt;1&gt;(<a class="code" href="classFreeRTOS_1_1TaskBase.html#a61c87bd8ae5115aa98acf120709d9667">notifyWait</a>());</div>
+<div class="line">    <span class="keyword">auto</span> interruptStatus = std::get&lt;1&gt;(<a class="code" href="classFreeRTOS_1_1TaskBase.html#a6155099d7c8440bb189a34a45741eea3">notifyWait</a>());</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Process any bits set in the received notification value.  This assumes</span></div>
 <div class="line">    <span class="comment">// the peripheral sets bit 0 for an Rx interrupt, bit 1 for a Tx interrupt,</span></div>
@@ -1689,10 +1685,10 @@ true Otherwise.</dd></dl>
 <p>Events can be sent to a task using an intermediary object. Examples of such objects are queues, semaphores, mutexes and event groups. <a class="el" href="classFreeRTOS_1_1Task.html" title="Class that encapsulates the functionality of a FreeRTOS task.">Task</a> notifications are a method of sending an event directly to a task without the need for such an intermediary object.</p>
 <p>A notification sent to a task can optionally perform an action, such as update, overwrite or increment one of the task's notification values. In that way task notifications can be used to send data to a task, or be used as light weight and fast binary or counting semaphores.</p>
 <p><a class="el" href="classFreeRTOS_1_1TaskBase.html#ab7802d619a9c65584dba593d69066e1b" title="Function that calls uint32_t ulTaskNotifyTakeIndexed( UBaseType_t uxIndexToWaitOn,...">notifyTake()</a> is intended for use when a task notification is used as a faster and lighter weight binary or counting semaphore alternative. Actual FreeRTOS semaphores are taken using the FreeRTOS::Semaphore::take() API function, the equivalent action that instead uses a task notification is <a class="el" href="classFreeRTOS_1_1TaskBase.html#ab7802d619a9c65584dba593d69066e1b" title="Function that calls uint32_t ulTaskNotifyTakeIndexed( UBaseType_t uxIndexToWaitOn,...">notifyTake()</a>.</p>
-<p>When task notifications are being used as a binary or counting semaphore equivalent then the task being notified should wait for the notification using the notificationTake() API function rather than the <a class="el" href="classFreeRTOS_1_1TaskBase.html#a61c87bd8ae5115aa98acf120709d9667" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> API function.</p>
+<p>When task notifications are being used as a binary or counting semaphore equivalent then the task being notified should wait for the notification using the notificationTake() API function rather than the <a class="el" href="classFreeRTOS_1_1TaskBase.html#a6155099d7c8440bb189a34a45741eea3" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> API function.</p>
 <p><a class="el" href="classFreeRTOS_1_1TaskBase.html#ab7802d619a9c65584dba593d69066e1b" title="Function that calls uint32_t ulTaskNotifyTakeIndexed( UBaseType_t uxIndexToWaitOn,...">notifyTake()</a> can either clear the task's notification value at the array index specified by the indexToWaitOn parameter to zero on exit, in which case the notification value acts like a binary semaphore, or decrement the notification value on exit, in which case the notification value acts like a counting semaphore.</p>
 <p>A task can use <a class="el" href="classFreeRTOS_1_1TaskBase.html#ab7802d619a9c65584dba593d69066e1b" title="Function that calls uint32_t ulTaskNotifyTakeIndexed( UBaseType_t uxIndexToWaitOn,...">notifyTake()</a> to [optionally] block to wait for a notification. The task does not consume any CPU time while it is in the Blocked state.</p>
-<p>Where as <a class="el" href="classFreeRTOS_1_1TaskBase.html#a61c87bd8ae5115aa98acf120709d9667" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> will return when a notification is pending, <a class="el" href="classFreeRTOS_1_1TaskBase.html#ab7802d619a9c65584dba593d69066e1b" title="Function that calls uint32_t ulTaskNotifyTakeIndexed( UBaseType_t uxIndexToWaitOn,...">notifyTake()</a> will return when the task's notification value is not zero.</p>
+<p>Where as <a class="el" href="classFreeRTOS_1_1TaskBase.html#a6155099d7c8440bb189a34a45741eea3" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> will return when a notification is pending, <a class="el" href="classFreeRTOS_1_1TaskBase.html#ab7802d619a9c65584dba593d69066e1b" title="Function that calls uint32_t ulTaskNotifyTakeIndexed( UBaseType_t uxIndexToWaitOn,...">notifyTake()</a> will return when the task's notification value is not zero.</p>
 <dl class="section note"><dt>Note</dt><dd>Each notification within the array operates independently - a task can only block on one notification within the array at a time and will not be unblocked by a notification sent to any other array index.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1847,7 +1843,7 @@ true Otherwise.</dd></dl>
 <div class="line">    <span class="comment">// notification value, so the next event can only ever be on message</span></div>
 <div class="line">    <span class="comment">// received.</span></div>
 <div class="line">    <span class="keyword">auto</span> [received, notification] =</div>
-<div class="line">        <a class="code" href="classFreeRTOS_1_1TaskBase.html#a61c87bd8ae5115aa98acf120709d9667">notifyWait</a>(0, 0, 0, ticksUntilTimeout);  <span class="comment">// TODO: Clean up</span></div>
+<div class="line">        <a class="code" href="classFreeRTOS_1_1TaskBase.html#a6155099d7c8440bb189a34a45741eea3">notifyWait</a>(0, 0, 0, ticksUntilTimeout);  <span class="comment">// TODO: Clean up</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// If there wasn&#39;t a timeout, then the only possible event was received.  In</span></div>
 <div class="line">    <span class="comment">// this example, that is the MESSAGE_RECEIVED_EVENT.</span></div>
@@ -1866,8 +1862,8 @@ true Otherwise.</dd></dl>
 </div><!-- fragment --> 
 </div>
 </div>
-<a id="a61c87bd8ae5115aa98acf120709d9667"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61c87bd8ae5115aa98acf120709d9667">&#9670;&nbsp;</a></span>notifyWait()</h2>
+<a id="a6155099d7c8440bb189a34a45741eea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6155099d7c8440bb189a34a45741eea3">&#9670;&nbsp;</a></span>notifyWait()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1876,7 +1872,7 @@ true Otherwise.</dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::tuple&lt;bool, NotificationBits&gt; FreeRTOS::TaskBase::notifyWait </td>
+          <td class="memname">static std::pair&lt;bool, NotificationBits&gt; FreeRTOS::TaskBase::notifyWait </td>
           <td>(</td>
           <td class="paramtype">const TickType_t&#160;</td>
           <td class="paramname"><em>ticksToWait</em> = <code>portMAX_DELAY</code>, </td>
@@ -1917,12 +1913,12 @@ true Otherwise.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://www.freertos.org/xTaskNotifyWait.html">https://www.freertos.org/xTaskNotifyWait.html</a></dd></dl>
 <p>configUSE_TASK_NOTIFICATIONS must be undefined or defined as 1 for these functions to be available.</p>
 <p>Each task has an array of 'task notifications' (or just 'notifications'), each of which has a state and a 32-bit value. A direct to task notification is an event sent directly to a task that can unblock the receiving task, and optionally update one of the receiving task’s notification values in a number of different ways. For example, a notification may overwrite one of the receiving task’s notification values, or just set one or more bits in one of the receiving task’s notification values.</p>
-<p><a class="el" href="classFreeRTOS_1_1TaskBase.html#a61c87bd8ae5115aa98acf120709d9667" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> waits, with an optional timeout, for the calling task to receive a notification. If the receiving RTOS task was already Blocked waiting for a notification when the notification it is waiting for arrives the receiving RTOS task will be removed from the Blocked state and the notification cleared.</p>
+<p><a class="el" href="classFreeRTOS_1_1TaskBase.html#a6155099d7c8440bb189a34a45741eea3" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> waits, with an optional timeout, for the calling task to receive a notification. If the receiving RTOS task was already Blocked waiting for a notification when the notification it is waiting for arrives the receiving RTOS task will be removed from the Blocked state and the notification cleared.</p>
 <dl class="section note"><dt>Note</dt><dd>Each notification within the array operates independently - a task can only block on one notification within the array at a time and will not be unblocked by a notification sent to any other array index.</dd></dl>
 <p><a class="el" href="classFreeRTOS_1_1TaskBase.html#abadbaa9d344e1ae0f1d9845fdd116948" title="Function that calls BaseType_t xTaskNotifyGiveIndexed( TaskHandle_t xTaskToNotify,...">notifyGive()</a> must not be called from an interrupt service routine. Use <a class="el" href="classFreeRTOS_1_1TaskBase.html#acbde3b2a52920a5b9bdf834c025add80" title="Function that calls void vTaskNotifyGiveIndexedFromISR( TaskHandle_t xTaskHandle, UBaseType_t uxIndex...">notifyGiveFromISR()</a> instead.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ticksToWait</td><td>The maximum time to wait in the Blocked state for a notification to be received if a notification is not already pending when <a class="el" href="classFreeRTOS_1_1TaskBase.html#a61c87bd8ae5115aa98acf120709d9667" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> is called.</td></tr>
+    <tr><td class="paramname">ticksToWait</td><td>The maximum time to wait in the Blocked state for a notification to be received if a notification is not already pending when <a class="el" href="classFreeRTOS_1_1TaskBase.html#a6155099d7c8440bb189a34a45741eea3" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> is called.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1930,7 +1926,7 @@ true Otherwise.</dd></dl>
 <p>The time is specified in RTOS tick periods. The pdMS_TO_TICKS() macro can be used to convert a time specified in milliseconds into a time specified in ticks.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">bitsToClearOnEntry</td><td>Any bits set in bitsToClearOnEntry will be cleared in the calling RTOS task's notification value on entry to the <a class="el" href="classFreeRTOS_1_1TaskBase.html#a61c87bd8ae5115aa98acf120709d9667" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> function (before the task waits for a new notification) provided a notification is not already pending when <a class="el" href="classFreeRTOS_1_1TaskBase.html#a61c87bd8ae5115aa98acf120709d9667" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> is called.</td></tr>
+    <tr><td class="paramname">bitsToClearOnEntry</td><td>Any bits set in bitsToClearOnEntry will be cleared in the calling RTOS task's notification value on entry to the <a class="el" href="classFreeRTOS_1_1TaskBase.html#a6155099d7c8440bb189a34a45741eea3" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> function (before the task waits for a new notification) provided a notification is not already pending when <a class="el" href="classFreeRTOS_1_1TaskBase.html#a6155099d7c8440bb189a34a45741eea3" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> is called.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1938,7 +1934,7 @@ true Otherwise.</dd></dl>
 <p>Setting bitsToClearOnEntry to 0xffffffff (ULONG_MAX) will clear all the bits in the task's notification value, effectively clearing the value to 0.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">bitsToClearOnExit</td><td>Any bits set in bitsToClearOnExit will be cleared in the calling RTOS task's notification value before <a class="el" href="classFreeRTOS_1_1TaskBase.html#a61c87bd8ae5115aa98acf120709d9667" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> function exits if a notification was received.</td></tr>
+    <tr><td class="paramname">bitsToClearOnExit</td><td>Any bits set in bitsToClearOnExit will be cleared in the calling RTOS task's notification value before <a class="el" href="classFreeRTOS_1_1TaskBase.html#a6155099d7c8440bb189a34a45741eea3" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> function exits if a notification was received.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1953,8 +1949,8 @@ true Otherwise.</dd></dl>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">true</td><td>If a notification was received, or a notification was already pending when <a class="el" href="classFreeRTOS_1_1TaskBase.html#a61c87bd8ae5115aa98acf120709d9667" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> was called. </td></tr>
-    <tr><td class="paramname">false</td><td>If the call to <a class="el" href="classFreeRTOS_1_1TaskBase.html#a61c87bd8ae5115aa98acf120709d9667" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> timed out before a notification was received. </td></tr>
+    <tr><td class="paramname">true</td><td>If a notification was received, or a notification was already pending when <a class="el" href="classFreeRTOS_1_1TaskBase.html#a6155099d7c8440bb189a34a45741eea3" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> was called. </td></tr>
+    <tr><td class="paramname">false</td><td>If the call to <a class="el" href="classFreeRTOS_1_1TaskBase.html#a6155099d7c8440bb189a34a45741eea3" title="Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...">notifyWait()</a> timed out before a notification was received. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1983,7 +1979,7 @@ true Otherwise.</dd></dl>
 <div class="line">    <span class="comment">// return value) to wait for a notification.  Bits in this RTOS task&#39;s</span></div>
 <div class="line">    <span class="comment">// notification value are set by the notifying tasks and interrupts to</span></div>
 <div class="line">    <span class="comment">// indicate which events have occurred.</span></div>
-<div class="line">    <span class="keyword">auto</span> notifiedValue = std::get&lt;1&gt;(<a class="code" href="classFreeRTOS_1_1TaskBase.html#a61c87bd8ae5115aa98acf120709d9667">notifyWait</a>());</div>
+<div class="line">    <span class="keyword">auto</span> notifiedValue = <a class="code" href="classFreeRTOS_1_1TaskBase.html#a6155099d7c8440bb189a34a45741eea3">notifyWait</a>().second;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Process any events that have been latched in the notified value.</span></div>
 <div class="line">    <span class="keywordflow">if</span> (notifiedValue[0]) {</div>
@@ -2360,6 +2356,7 @@ true Otherwise.</dd></dl>
 </div><!-- contents -->
 <div class="ttc" id="aclassFreeRTOS_1_1TaskBase_html_a22046886aafe38ad4620220454e0e919"><div class="ttname"><a href="classFreeRTOS_1_1TaskBase.html#a22046886aafe38ad4620220454e0e919">FreeRTOS::TaskBase::taskFunction</a></div><div class="ttdeci">virtual void taskFunction()=0</div><div class="ttdoc">Abstraction function that acts as the entry point of the task for the user.</div></div>
 <div class="ttc" id="aclassFreeRTOS_1_1TaskBase_html_a2860b925a516b350da7ec2bc2661614f"><div class="ttname"><a href="classFreeRTOS_1_1TaskBase.html#a2860b925a516b350da7ec2bc2661614f">FreeRTOS::TaskBase::delay</a></div><div class="ttdeci">static void delay(const TickType_t ticksToDelay=0)</div><div class="ttdoc">Function that calls void vTaskDelay( const TickType_t xTicksToDelay )</div><div class="ttdef"><b>Definition:</b> Task.hpp:1105</div></div>
+<div class="ttc" id="aclassFreeRTOS_1_1TaskBase_html_a6155099d7c8440bb189a34a45741eea3"><div class="ttname"><a href="classFreeRTOS_1_1TaskBase.html#a6155099d7c8440bb189a34a45741eea3">FreeRTOS::TaskBase::notifyWait</a></div><div class="ttdeci">static std::pair&lt; bool, NotificationBits &gt; notifyWait(const TickType_t ticksToWait=portMAX_DELAY, const NotificationBits bitsToClearOnEntry=0, const NotificationBits bitsToClearOnExit=0, const UBaseType_t index=0)</div><div class="ttdoc">Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...</div><div class="ttdef"><b>Definition:</b> Task.hpp:967</div></div>
 <div class="ttc" id="aclassFreeRTOS_1_1TaskBase_html_ad05951fe320fcb131d27e5c3df3b722c"><div class="ttname"><a href="classFreeRTOS_1_1TaskBase.html#ad05951fe320fcb131d27e5c3df3b722c">FreeRTOS::TaskBase::delayUntil</a></div><div class="ttdeci">bool delayUntil(const TickType_t timeIncrement=0)</div><div class="ttdoc">Function that calls BaseType_t xTaskDelayUntil( TickType_t *pxPreviousWakeTime, const TickType_t xTim...</div><div class="ttdef"><b>Definition:</b> Task.hpp:1151</div></div>
 <div class="ttc" id="aclassFreeRTOS_1_1Task_html"><div class="ttname"><a href="classFreeRTOS_1_1Task.html">FreeRTOS::Task</a></div><div class="ttdoc">Class that encapsulates the functionality of a FreeRTOS task.</div><div class="ttdef"><b>Definition:</b> Task.hpp:1289</div></div>
 <div class="ttc" id="aclassFreeRTOS_1_1TaskBase_html_a16a76888031fce97753afe12b84286ee"><div class="ttname"><a href="classFreeRTOS_1_1TaskBase.html#a16a76888031fce97753afe12b84286ee">FreeRTOS::TaskBase::notifyStateClear</a></div><div class="ttdeci">bool notifyStateClear(const UBaseType_t index=0) const</div><div class="ttdoc">Function that calls BaseType_t xTaskNotifyStateClearIndexed( TaskHandle_t xTask, UBaseType_t uxIndexT...</div><div class="ttdef"><b>Definition:</b> Task.hpp:1016</div></div>
@@ -2370,7 +2367,6 @@ true Otherwise.</dd></dl>
 <div class="ttc" id="anamespaceFreeRTOS_1_1Kernel_html_aa22586993595ea064e411c0063096021"><div class="ttname"><a href="namespaceFreeRTOS_1_1Kernel.html#aa22586993595ea064e411c0063096021">FreeRTOS::Kernel::yield</a></div><div class="ttdeci">void yield()</div><div class="ttdoc">Function that calls taskYIELD()</div><div class="ttdef"><b>Definition:</b> Kernel.hpp:153</div></div>
 <div class="ttc" id="aclassFreeRTOS_1_1TaskBase_html_a86555e44f6c378879e62c0dbb3f859d4"><div class="ttname"><a href="classFreeRTOS_1_1TaskBase.html#a86555e44f6c378879e62c0dbb3f859d4">FreeRTOS::TaskBase::TaskBase</a></div><div class="ttdeci">TaskBase()=default</div><div class="ttdoc">Construct a new TaskBase object. This default constructor is deliberately private as this class is no...</div></div>
 <div class="ttc" id="aclassFreeRTOS_1_1TaskBase_html_ab7802d619a9c65584dba593d69066e1b"><div class="ttname"><a href="classFreeRTOS_1_1TaskBase.html#ab7802d619a9c65584dba593d69066e1b">FreeRTOS::TaskBase::notifyTake</a></div><div class="ttdeci">static NotificationBits notifyTake(const TickType_t ticksToWait=portMAX_DELAY, const bool clearCountOnExit=true, const UBaseType_t index=0)</div><div class="ttdoc">Function that calls uint32_t ulTaskNotifyTakeIndexed( UBaseType_t uxIndexToWaitOn,...</div><div class="ttdef"><b>Definition:</b> Task.hpp:1240</div></div>
-<div class="ttc" id="aclassFreeRTOS_1_1TaskBase_html_a61c87bd8ae5115aa98acf120709d9667"><div class="ttname"><a href="classFreeRTOS_1_1TaskBase.html#a61c87bd8ae5115aa98acf120709d9667">FreeRTOS::TaskBase::notifyWait</a></div><div class="ttdeci">static std::tuple&lt; bool, NotificationBits &gt; notifyWait(const TickType_t ticksToWait=portMAX_DELAY, const NotificationBits bitsToClearOnEntry=0, const NotificationBits bitsToClearOnExit=0, const UBaseType_t index=0)</div><div class="ttdoc">Function that calls BaseType_t xTaskNotifyWaitIndexed( UBaseType_t uxIndexToWaitOn,...</div><div class="ttdef"><b>Definition:</b> Task.hpp:967</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
