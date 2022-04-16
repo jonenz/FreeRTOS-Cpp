@@ -55,6 +55,8 @@ class MutexBase {
   MutexBase(const MutexBase&) = delete;
   MutexBase& operator=(const MutexBase&) = delete;
 
+  static void* operator new(size_t, void*);
+  static void* operator new[](size_t, void*);
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
   static void operator delete(void*) = delete;
@@ -188,6 +190,8 @@ class RecursiveMutexBase : public MutexBase {
   RecursiveMutexBase(const RecursiveMutexBase&) = delete;
   RecursiveMutexBase& operator=(const RecursiveMutexBase&) = delete;
 
+  static void* operator new(size_t, void*);
+  static void* operator new[](size_t, void*);
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
   static void operator delete(void*) = delete;
