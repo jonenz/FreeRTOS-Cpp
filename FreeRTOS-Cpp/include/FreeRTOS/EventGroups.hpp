@@ -52,6 +52,8 @@ class EventGroupBase {
   EventGroupBase(const EventGroupBase&) = delete;
   EventGroupBase& operator=(const EventGroupBase&) = delete;
 
+  static void* operator new(size_t, void*);
+  static void* operator new[](size_t, void*);
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
   static void operator delete(void*) = delete;
