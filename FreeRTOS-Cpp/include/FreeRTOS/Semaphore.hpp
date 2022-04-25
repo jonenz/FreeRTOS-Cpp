@@ -54,6 +54,8 @@ class SemaphoreBase {
   SemaphoreBase(const SemaphoreBase&) = delete;
   SemaphoreBase& operator=(const SemaphoreBase&) = delete;
 
+  static void* operator new(size_t, void*);
+  static void* operator new[](size_t, void*);
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
   static void operator delete(void*) = delete;

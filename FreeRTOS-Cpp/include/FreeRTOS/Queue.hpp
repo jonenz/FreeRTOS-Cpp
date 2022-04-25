@@ -58,6 +58,8 @@ class QueueBase {
   QueueBase(const QueueBase&) = delete;
   QueueBase& operator=(const QueueBase&) = delete;
 
+  static void* operator new(size_t, void*);
+  static void* operator new[](size_t, void*);
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
   static void operator delete(void*) = delete;
