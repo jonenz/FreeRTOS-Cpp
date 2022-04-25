@@ -121,6 +121,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a6a792420dd72c04e56dd6b288155a346"><td class="memItemLeft" align="right" valign="top"><a id="a6a792420dd72c04e56dd6b288155a346"></a>
+static void *&#160;</td><td class="memItemRight" valign="bottom"><b>operator new</b> (size_t, void *)</td></tr>
+<tr class="separator:a6a792420dd72c04e56dd6b288155a346"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af35a79bfe8df14746c02650747cb6e8d"><td class="memItemLeft" align="right" valign="top"><a id="af35a79bfe8df14746c02650747cb6e8d"></a>
+static void *&#160;</td><td class="memItemRight" valign="bottom"><b>operator new[]</b> (size_t, void *)</td></tr>
+<tr class="separator:af35a79bfe8df14746c02650747cb6e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43b6e93c669bf8e31f1a7f99e060f68d"><td class="memItemLeft" align="right" valign="top"><a id="a43b6e93c669bf8e31f1a7f99e060f68d"></a>
 static void *&#160;</td><td class="memItemRight" valign="bottom"><b>operator new</b> (size_t)=delete</td></tr>
 <tr class="separator:a43b6e93c669bf8e31f1a7f99e060f68d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -425,11 +431,11 @@ false If an error occurred. Mutexes (semaphores) are implemented using queues. A
 <li>/home/runner/work/FreeRTOS-Cpp/FreeRTOS-Cpp/FreeRTOS-Cpp/include/FreeRTOS/<a class="el" href="Mutex_8hpp_source.html">Mutex.hpp</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassFreeRTOS_1_1MutexBase_html_aabb088ff893bdce13d7db1f901ef3151"><div class="ttname"><a href="classFreeRTOS_1_1MutexBase.html#aabb088ff893bdce13d7db1f901ef3151">FreeRTOS::MutexBase::unlock</a></div><div class="ttdeci">bool unlock() const</div><div class="ttdoc">Function that calls xSemaphoreGive( SemaphoreHandle_t xSemaphore )</div><div class="ttdef"><b>Definition:</b> Mutex.hpp:156</div></div>
-<div class="ttc" id="aclassFreeRTOS_1_1MutexBase_html_a91ebb9d511c7d947beba84f0f8353047"><div class="ttname"><a href="classFreeRTOS_1_1MutexBase.html#a91ebb9d511c7d947beba84f0f8353047">FreeRTOS::MutexBase::lock</a></div><div class="ttdeci">bool lock(const TickType_t ticksToWait=portMAX_DELAY) const</div><div class="ttdoc">Function that calls xSemaphoreTake( SemaphoreHandle_t xSemaphore, TickType_t xTicksToWait )</div><div class="ttdef"><b>Definition:</b> Mutex.hpp:91</div></div>
-<div class="ttc" id="aclassFreeRTOS_1_1Task_html"><div class="ttname"><a href="classFreeRTOS_1_1Task.html">FreeRTOS::Task</a></div><div class="ttdoc">Class that encapsulates the functionality of a FreeRTOS task.</div><div class="ttdef"><b>Definition:</b> Task.hpp:1289</div></div>
-<div class="ttc" id="aclassFreeRTOS_1_1Mutex_html"><div class="ttname"><a href="classFreeRTOS_1_1Mutex.html">FreeRTOS::Mutex</a></div><div class="ttdoc">Class that encapsulates the functionality of a FreeRTOS mutex.</div><div class="ttdef"><b>Definition:</b> Mutex.hpp:279</div></div>
-<div class="ttc" id="aclassFreeRTOS_1_1MutexBase_html_ad54473ce46a5f0ddaaebe6cd0ae7391b"><div class="ttname"><a href="classFreeRTOS_1_1MutexBase.html#ad54473ce46a5f0ddaaebe6cd0ae7391b">FreeRTOS::MutexBase::isValid</a></div><div class="ttdeci">bool isValid() const</div><div class="ttdoc">Function that checks if the underlying semaphore handle is not NULL. This should be used to ensure a ...</div><div class="ttdef"><b>Definition:</b> Mutex.hpp:72</div></div>
+<div class="ttc" id="aclassFreeRTOS_1_1MutexBase_html_aabb088ff893bdce13d7db1f901ef3151"><div class="ttname"><a href="classFreeRTOS_1_1MutexBase.html#aabb088ff893bdce13d7db1f901ef3151">FreeRTOS::MutexBase::unlock</a></div><div class="ttdeci">bool unlock() const</div><div class="ttdoc">Function that calls xSemaphoreGive( SemaphoreHandle_t xSemaphore )</div><div class="ttdef"><b>Definition:</b> Mutex.hpp:158</div></div>
+<div class="ttc" id="aclassFreeRTOS_1_1MutexBase_html_a91ebb9d511c7d947beba84f0f8353047"><div class="ttname"><a href="classFreeRTOS_1_1MutexBase.html#a91ebb9d511c7d947beba84f0f8353047">FreeRTOS::MutexBase::lock</a></div><div class="ttdeci">bool lock(const TickType_t ticksToWait=portMAX_DELAY) const</div><div class="ttdoc">Function that calls xSemaphoreTake( SemaphoreHandle_t xSemaphore, TickType_t xTicksToWait )</div><div class="ttdef"><b>Definition:</b> Mutex.hpp:93</div></div>
+<div class="ttc" id="aclassFreeRTOS_1_1Task_html"><div class="ttname"><a href="classFreeRTOS_1_1Task.html">FreeRTOS::Task</a></div><div class="ttdoc">Class that encapsulates the functionality of a FreeRTOS task.</div><div class="ttdef"><b>Definition:</b> Task.hpp:1291</div></div>
+<div class="ttc" id="aclassFreeRTOS_1_1Mutex_html"><div class="ttname"><a href="classFreeRTOS_1_1Mutex.html">FreeRTOS::Mutex</a></div><div class="ttdoc">Class that encapsulates the functionality of a FreeRTOS mutex.</div><div class="ttdef"><b>Definition:</b> Mutex.hpp:283</div></div>
+<div class="ttc" id="aclassFreeRTOS_1_1MutexBase_html_ad54473ce46a5f0ddaaebe6cd0ae7391b"><div class="ttname"><a href="classFreeRTOS_1_1MutexBase.html#ad54473ce46a5f0ddaaebe6cd0ae7391b">FreeRTOS::MutexBase::isValid</a></div><div class="ttdeci">bool isValid() const</div><div class="ttdoc">Function that checks if the underlying semaphore handle is not NULL. This should be used to ensure a ...</div><div class="ttdef"><b>Definition:</b> Mutex.hpp:74</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
