@@ -65,8 +65,8 @@ class MessageBufferBase {
   MessageBufferBase(const MessageBufferBase&) = delete;
   MessageBufferBase& operator=(const MessageBufferBase&) = delete;
 
-  static void* operator new(size_t, void*);
-  static void* operator new[](size_t, void*);
+  static void* operator new(size_t, void* ptr) { return ptr; }
+  static void* operator new[](size_t, void* ptr) { return ptr; }
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
   static void operator delete(void*) = delete;
