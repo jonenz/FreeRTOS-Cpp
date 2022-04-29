@@ -65,8 +65,8 @@ class StreamBufferBase {
   StreamBufferBase(const StreamBufferBase&) = delete;
   StreamBufferBase& operator=(const StreamBufferBase&) = delete;
 
-  static void* operator new(size_t, void*);
-  static void* operator new[](size_t, void*);
+  static void* operator new(size_t, void* ptr) { return ptr; }
+  static void* operator new[](size_t, void* ptr) { return ptr; }
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
   static void operator delete(void*) = delete;
