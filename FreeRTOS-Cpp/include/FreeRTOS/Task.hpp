@@ -70,8 +70,6 @@ class TaskBase {
   static void* operator new[](size_t, void* ptr) { return ptr; }
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
-  static void operator delete(void*) = delete;
-  static void operator delete[](void*) = delete;
 
   enum class State {
     Running = eRunning,

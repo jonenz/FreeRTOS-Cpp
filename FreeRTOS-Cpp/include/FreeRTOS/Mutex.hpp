@@ -59,8 +59,6 @@ class MutexBase {
   static void* operator new[](size_t, void* ptr) { return ptr; }
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
-  static void operator delete(void*) = delete;
-  static void operator delete[](void*) = delete;
 
   /**
    * Mutex.hpp
@@ -194,8 +192,6 @@ class RecursiveMutexBase : public MutexBase {
   static void* operator new[](size_t, void*);
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
-  static void operator delete(void*) = delete;
-  static void operator delete[](void*) = delete;
 
   /**
    * Mutex.hpp

@@ -56,8 +56,6 @@ class EventGroupBase {
   static void* operator new[](size_t, void* ptr) { return ptr; }
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
-  static void operator delete(void*) = delete;
-  static void operator delete[](void*) = delete;
 
   // NOLINTNEXTLINE
   using EventBits = std::bitset<((configUSE_16_BIT_TICKS == 1) ? 8 : 24)>;
