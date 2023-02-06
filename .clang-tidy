@@ -154,7 +154,7 @@ CheckOptions:
   - key:             cppcoreguidelines-pro-bounds-constant-array-index.GslHeader
     value:           ''
   - key:             cppcoreguidelines-pro-bounds-constant-array-index.IncludeStyle
-    value:           '0'
+    value:           'llvm'
   - key:             cppcoreguidelines-pro-type-member-init.IgnoreArrays
     value:           '0'
   - key:             cppcoreguidelines-pro-type-member-init.UseAssignment
