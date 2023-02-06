@@ -320,7 +320,7 @@ class TaskBase {
    * (in words, so actual spaces on the stack rather than bytes) since the task
    * was created.
    */
-  inline BaseType_t getStackHighWaterMark() const {
+  inline UBaseType_t getStackHighWaterMark() const {
     return uxTaskGetStackHighWaterMark(handle);
   }
 
