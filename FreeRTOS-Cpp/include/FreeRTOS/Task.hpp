@@ -1291,7 +1291,6 @@ class TaskBase {
 #endif /* INCLUDE_vTaskDelete */
   }
 
-
   /**
    * @brief Handle used to refer to the task when using the FreeRTOS interface.
    */
