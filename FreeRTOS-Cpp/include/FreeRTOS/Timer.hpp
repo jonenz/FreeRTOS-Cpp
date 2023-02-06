@@ -847,9 +847,9 @@ class Timer : public TimerBase {
  * should create a class that derives from this class and implement
  * timerFunction().
  *
- * @warning This class contains the timer data structure, so any instace of this
- * class or class derived from this class should be persistent (not declared on
- * the stack of another function).
+ * @warning This class contains the timer data structure, so any instance of
+ * this class or class derived from this class should be persistent (not
+ * declared on the stack of another function).
  */
 class StaticTimer : public TimerBase {
  public:
