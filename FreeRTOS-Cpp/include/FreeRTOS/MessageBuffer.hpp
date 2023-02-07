@@ -389,7 +389,19 @@ class MessageBufferBase {
 
  private:
   MessageBufferBase() = default;
-  ~MessageBufferBase() = default;
+
+  /**
+   * MessageBuffer.hpp
+   *
+   * @brief Destroy the MessageBufferBase object by calling <tt>void
+   * vMessageBufferDelete( MessageBufferHandle_t xMessageBuffer )</tt>
+   *
+   * @see <https://www.freertos.org/vMessageBufferDelete.html>
+   *
+   * Delete a queue - freeing all the memory allocated for storing of items
+   * placed on the queue.
+   */
+  ~MessageBufferBase() { vMessageBufferDelete(this->handle); }
 
   MessageBufferBase(MessageBufferBase&&) noexcept = default;
   MessageBufferBase& operator=(MessageBufferBase&&) noexcept = default;
@@ -437,19 +449,7 @@ class MessageBuffer : public MessageBufferBase {
   explicit MessageBuffer(size_t size) {
     this->handle = xMessageBufferCreate(size);
   }
-
-  /**
-   * MessageBuffer.hpp
-   *
-   * @brief Destroy the MessageBuffer object by calling <tt>void
-   * vMessageBufferDelete( MessageBufferHandle_t xMessageBuffer )</tt>
-   *
-   * @see <https://www.freertos.org/vMessageBufferDelete.html>
-   *
-   * Delete a queue - freeing all the memory allocated for storing of items
-   * placed on the queue.
-   */
-  ~MessageBuffer() { vMessageBufferDelete(this->handle); }
+  ~MessageBuffer() = default;
 
   MessageBuffer(const MessageBuffer&) = delete;
   MessageBuffer& operator=(const MessageBuffer&) = delete;
