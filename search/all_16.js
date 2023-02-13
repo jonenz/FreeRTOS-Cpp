@@ -1,13 +1,11 @@
 var searchData=
 [
-  ['_7ebinarysemaphore_136',['~BinarySemaphore',['../classFreeRTOS_1_1BinarySemaphore.html#a34138f1126d62eab8897c54fdf63a649',1,'FreeRTOS::BinarySemaphore']]],
-  ['_7ecountingsemaphore_137',['~CountingSemaphore',['../classFreeRTOS_1_1CountingSemaphore.html#aadda682516c2e474a089ccdc5dae6871',1,'FreeRTOS::CountingSemaphore']]],
-  ['_7eeventgroup_138',['~EventGroup',['../classFreeRTOS_1_1EventGroup.html#abc1ddc8e8ee528cc53d796b90ff8fe78',1,'FreeRTOS::EventGroup']]],
-  ['_7emessagebuffer_139',['~MessageBuffer',['../classFreeRTOS_1_1MessageBuffer.html#a0476413e517680e3e5e70ddf2663bf41',1,'FreeRTOS::MessageBuffer']]],
-  ['_7emutex_140',['~Mutex',['../classFreeRTOS_1_1Mutex.html#adf0a6b9b93fa68a20ef728fc63e0b1e2',1,'FreeRTOS::Mutex']]],
-  ['_7equeue_141',['~Queue',['../classFreeRTOS_1_1Queue.html#a752417bb33e5ef5544697cbc407d66af',1,'FreeRTOS::Queue']]],
-  ['_7erecursivemutex_142',['~RecursiveMutex',['../classFreeRTOS_1_1RecursiveMutex.html#af0ba542b6b0dab9a4e75817837e3adc5',1,'FreeRTOS::RecursiveMutex']]],
-  ['_7estreambuffer_143',['~StreamBuffer',['../classFreeRTOS_1_1StreamBuffer.html#a6628c0a588ee444e7749342cd4d442c0',1,'FreeRTOS::StreamBuffer']]],
-  ['_7etask_144',['~Task',['../classFreeRTOS_1_1Task.html#a8fc499ad9f2f02204a5ef1f6ba5313e7',1,'FreeRTOS::Task']]],
-  ['_7etimerbase_145',['~TimerBase',['../classFreeRTOS_1_1TimerBase.html#acfa81842ce88590d67397cb73867e3b1',1,'FreeRTOS::TimerBase']]]
+  ['_7eeventgroupbase_136',['~EventGroupBase',['../classFreeRTOS_1_1EventGroupBase.html#ac80d0e9b871852539c2b63d7331bdb08',1,'FreeRTOS::EventGroupBase']]],
+  ['_7emessagebufferbase_137',['~MessageBufferBase',['../classFreeRTOS_1_1MessageBufferBase.html#acb20badfea10e174795c9af58333093d',1,'FreeRTOS::MessageBufferBase']]],
+  ['_7emutexbase_138',['~MutexBase',['../classFreeRTOS_1_1MutexBase.html#aaa401f7ca6d56f73665c7132ae6d4e6e',1,'FreeRTOS::MutexBase']]],
+  ['_7equeuebase_139',['~QueueBase',['../classFreeRTOS_1_1QueueBase.html#af6b792d22db30ee6dd3bc6bb72ec9e49',1,'FreeRTOS::QueueBase']]],
+  ['_7esemaphorebase_140',['~SemaphoreBase',['../classFreeRTOS_1_1SemaphoreBase.html#aee76a0dcd17ee3a6415ae7ca33b8b5fe',1,'FreeRTOS::SemaphoreBase']]],
+  ['_7estreambufferbase_141',['~StreamBufferBase',['../classFreeRTOS_1_1StreamBufferBase.html#a49f77f13ec80e31c9d2baeecbb6c8495',1,'FreeRTOS::StreamBufferBase']]],
+  ['_7etaskbase_142',['~TaskBase',['../classFreeRTOS_1_1TaskBase.html#a21b860edd8f286c41cc349401c64cae6',1,'FreeRTOS::TaskBase']]],
+  ['_7etimerbase_143',['~TimerBase',['../classFreeRTOS_1_1TimerBase.html#acfa81842ce88590d67397cb73867e3b1',1,'FreeRTOS::TimerBase']]]
 ];

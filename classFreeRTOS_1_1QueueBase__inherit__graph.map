@@ -1,5 +1,5 @@
 <map id="FreeRTOS::QueueBase&lt; T &gt;" name="FreeRTOS::QueueBase&lt; T &gt;">
-<area shape="rect" id="node1" title="Base class that provides the standard queue interface to FreeRTOS::Queue and FreeRTOS::StaticQueue." alt="" coords="96,5,300,32"/>
-<area shape="rect" id="node2" href="$classFreeRTOS_1_1Queue.html" title="Class that encapsulates the functionality of a FreeRTOS queue." alt="" coords="5,80,177,107"/>
-<area shape="rect" id="node3" href="$classFreeRTOS_1_1StaticQueue.html" title="Class that encapsulates the functionality of a FreeRTOS queue." alt="" coords="201,80,411,107"/>
+<area shape="rect" id="node1" title="Base class that provides the standard queue interface to FreeRTOS::Queue and FreeRTOS::StaticQueue." alt="" coords="87,5,291,32"/>
+<area shape="rect" id="node2" href="$classFreeRTOS_1_1Queue.html" title="Class that encapsulates the functionality of a FreeRTOS queue." alt="" coords="5,87,177,114"/>
+<area shape="rect" id="node3" href="$classFreeRTOS_1_1StaticQueue.html" title="Class that encapsulates the functionality of a FreeRTOS queue." alt="" coords="202,80,373,121"/>
 </map>

@@ -14,7 +14,7 @@ var searchData=
   ['getpriority_35',['getPriority',['../classFreeRTOS_1_1TaskBase.html#a1dbff4d2c6a3bbc7c8a08da0e95e8eb7',1,'FreeRTOS::TaskBase']]],
   ['getreloadmode_36',['getReloadMode',['../classFreeRTOS_1_1TimerBase.html#a95d7b14b026b942f583d0873ec54b607',1,'FreeRTOS::TimerBase']]],
   ['getschedulerstate_37',['getSchedulerState',['../namespaceFreeRTOS_1_1Kernel.html#ab7bbbbc64b376984f704848ce9ce1259',1,'FreeRTOS::Kernel']]],
-  ['getstackhighwatermark_38',['getStackHighWaterMark',['../classFreeRTOS_1_1TaskBase.html#a2a7cfa8ab0d12fa5d50a05edf1383c6a',1,'FreeRTOS::TaskBase']]],
+  ['getstackhighwatermark_38',['getStackHighWaterMark',['../classFreeRTOS_1_1TaskBase.html#a792452ccfc23a4a13645afaca388ed33',1,'FreeRTOS::TaskBase']]],
   ['getstackhighwatermark2_39',['getStackHighWaterMark2',['../classFreeRTOS_1_1TaskBase.html#a90f20a76c56822c6db6e59664f3d34eb',1,'FreeRTOS::TaskBase']]],
   ['getstate_40',['getState',['../classFreeRTOS_1_1TaskBase.html#a5e637d47326a072ebaa065cb4632971a',1,'FreeRTOS::TaskBase']]],
   ['gettickcount_41',['getTickCount',['../namespaceFreeRTOS_1_1Kernel.html#a86f73ba71403767031f6bfdd1937c53c',1,'FreeRTOS::Kernel']]],
