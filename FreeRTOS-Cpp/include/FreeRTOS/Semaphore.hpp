@@ -58,8 +58,6 @@ class SemaphoreBase {
   static void* operator new[](size_t, void* ptr) { return ptr; }
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
-  static void operator delete(void*) = delete;
-  static void operator delete[](void*) = delete;
 
   /**
    * Semaphore.hpp
@@ -241,7 +239,19 @@ class SemaphoreBase {
 
  private:
   SemaphoreBase() = default;
-  ~SemaphoreBase() = default;
+
+  /**
+   * Semaphore.hpp
+   *
+   * @brief Destroy the SemaphoreBase object by calling <tt>void
+   * vSemaphoreDelete( SemaphoreHandle_t xSemaphore )</tt>
+   *
+   * @see <https://www.freertos.org/a00113.html#vSemaphoreDelete>
+   *
+   * @note Do not delete a semaphore that has tasks blocked on it (tasks that
+   * are in the Blocked state waiting for the semaphore to become available).
+   */
+  ~SemaphoreBase() { vSemaphoreDelete(this->handle); }
 
   SemaphoreBase(SemaphoreBase&&) noexcept = default;
   SemaphoreBase& operator=(SemaphoreBase&&) noexcept = default;
@@ -314,19 +324,7 @@ class BinarySemaphore : public SemaphoreBase {
    * @include Semaphore/binarySemaphore.cpp
    */
   BinarySemaphore() { this->handle = xSemaphoreCreateBinary(); }
-
-  /**
-   * Semaphore.hpp
-   *
-   * @brief Destroy the BinarySemaphore object by calling <tt>void
-   * vSemaphoreDelete( SemaphoreHandle_t xSemaphore )</tt>
-   *
-   * @see <https://www.freertos.org/a00113.html#vSemaphoreDelete>
-   *
-   * @note Do not delete a semaphore that has tasks blocked on it (tasks that
-   * are in the Blocked state waiting for the semaphore to become available).
-   */
-  ~BinarySemaphore() { vSemaphoreDelete(this->handle); }
+  ~BinarySemaphore() = default;
 
   BinarySemaphore(const BinarySemaphore&) = delete;
   BinarySemaphore& operator=(const BinarySemaphore&) = delete;
@@ -391,22 +389,7 @@ class CountingSemaphore : public SemaphoreBase {
                              const UBaseType_t initialCount = 0) {
     this->handle = xSemaphoreCreateCounting(maxCount, initialCount);
   }
-
-  /**
-   * Semaphore.hpp
-   *
-   * @brief Destroy the CountingSemaphore object by calling
-   * <tt>void vSemaphoreDelete( SemaphoreHandle_t xSemaphore )</tt>
-   *
-   * @see <https://www.freertos.org/a00113.html#vSemaphoreDelete>
-   *
-   * @note Do not delete a semaphore that has tasks blocked on it (tasks that
-   * are in the Blocked state waiting for the semaphore to become available).
-   *
-   * <b>Example Usage</b>
-   * @include Semaphore/countingSemaphore.cpp
-   */
-  ~CountingSemaphore() { vSemaphoreDelete(this->handle); }
+  ~CountingSemaphore() = default;
 
   CountingSemaphore(const CountingSemaphore&) = delete;
   CountingSemaphore& operator=(const CountingSemaphore&) = delete;

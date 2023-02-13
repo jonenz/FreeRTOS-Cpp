@@ -62,8 +62,6 @@ class QueueBase {
   static void* operator new[](size_t, void* ptr) { return ptr; }
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
-  static void operator delete(void*) = delete;
-  static void operator delete[](void*) = delete;
 
   /**
    * Queue.hpp
@@ -610,7 +608,19 @@ class QueueBase {
    * FreeRTOS::Queue or FreeRTOS::StaticQueue.
    */
   QueueBase() = default;
-  ~QueueBase() = default;
+
+  /**
+   * Queue.hpp
+   *
+   * @brief Destroy the QueueBase object by calling <tt>void vQueueDelete(
+   * QueueHandle_t xQueue )</tt>
+   *
+   * @see <https://www.freertos.org/a00018.html#vQueueDelete>
+   *
+   * Delete a queue - freeing all the memory allocated for storing of items
+   * placed on the queue.
+   */
+  ~QueueBase() { vQueueDelete(this->handle); }
 
   QueueBase(QueueBase&&) noexcept = default;
   QueueBase& operator=(QueueBase&&) noexcept = default;
@@ -659,19 +669,7 @@ class Queue : public QueueBase<T> {
   explicit Queue(const UBaseType_t length) {
     this->handle = xQueueCreate(length, sizeof(T));
   }
-
-  /**
-   * Queue.hpp
-   *
-   * @brief Destroy the Queue object by calling <tt>void vQueueDelete(
-   * QueueHandle_t xQueue )</tt>
-   *
-   * @see <https://www.freertos.org/a00018.html#vQueueDelete>
-   *
-   * Delete a queue - freeing all the memory allocated for storing of items
-   * placed on the queue.
-   */
-  ~Queue() { vQueueDelete(this->handle); }
+  ~Queue() = default;
 
   Queue(const Queue&) = delete;
   Queue& operator=(const Queue&) = delete;
