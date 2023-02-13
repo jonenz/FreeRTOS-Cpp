@@ -66,12 +66,10 @@ class TaskBase {
   TaskBase(const TaskBase&) = delete;
   TaskBase& operator=(const TaskBase&) = delete;
 
-  static void* operator new(size_t, void*);
-  static void* operator new[](size_t, void*);
+  static void* operator new(size_t, void* ptr) { return ptr; }
+  static void* operator new[](size_t, void* ptr) { return ptr; }
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
-  static void operator delete(void*) = delete;
-  static void operator delete[](void*) = delete;
 
   enum class State {
     Running = eRunning,
@@ -320,7 +318,7 @@ class TaskBase {
    * (in words, so actual spaces on the stack rather than bytes) since the task
    * was created.
    */
-  inline BaseType_t getStackHighWaterMark() const {
+  inline UBaseType_t getStackHighWaterMark() const {
     return uxTaskGetStackHighWaterMark(handle);
   }
 
@@ -1254,10 +1252,44 @@ class TaskBase {
    * base class for creating a task.
    */
   TaskBase() = default;
-  ~TaskBase() = default;
 
   TaskBase(TaskBase&&) noexcept = default;
   TaskBase& operator=(TaskBase&&) noexcept = default;
+
+  /**
+   * Task.hpp
+   *
+   * @brief Destroy the Task object.
+   *
+   * @see <https://www.freertos.org/a00126.html>
+   *
+   * If INCLUDE_vTaskDelete is defined as 1 and the task handle is not NULL,
+   * then the destructor will call <tt>void vTaskDelete( TaskHandle_t xTask
+   * )</tt>  See the RTOS Configuration documentation for more information.
+   *
+   * Calling <tt>void vTaskDelete( TaskHandle_t xTask )</tt> will remove a task
+   * from the RTOS kernels management.  The task being deleted will be removed
+   * from all ready, blocked, suspended and event lists.
+   *
+   * @note The idle task is responsible for freeing the RTOS kernel allocated
+   * memory from tasks that have been deleted. It is therefore important that
+   * the idle task is not starved of microcontroller processing time if your
+   * application makes any calls to <tt>void vTaskDelete( TaskHandle_t xTask
+   * )</tt> Memory allocated by the task code is not automatically freed, and
+   * should be freed before the task is deleted.
+   *
+   * <b>Example Usage</b>
+   * @include Task/task.cpp
+   */
+  ~TaskBase() {
+#if (INCLUDE_vTaskDelete == 1)
+
+    if (handle != NULL) {
+      vTaskDelete(handle);
+    }
+
+#endif /* INCLUDE_vTaskDelete */
+  }
 
   /**
    * @brief Handle used to refer to the task when using the FreeRTOS interface.
@@ -1351,40 +1383,7 @@ class Task : public TaskBase {
                                            this, priority, &handle) == pdPASS);
   }
 
-  /**
-   * Task.hpp
-   *
-   * @brief Destroy the Task object.
-   *
-   * @see <https://www.freertos.org/a00126.html>
-   *
-   * If INCLUDE_vTaskDelete is defined as 1 and the task handle is not NULL,
-   * then the destructor will call <tt>void vTaskDelete( TaskHandle_t xTask
-   * )</tt>  See the RTOS Configuration documentation for more information.
-   *
-   * Calling <tt>void vTaskDelete( TaskHandle_t xTask )</tt> will remove a task
-   * from the RTOS kernels management.  The task being deleted will be removed
-   * from all ready, blocked, suspended and event lists.
-   *
-   * @note The idle task is responsible for freeing the RTOS kernel allocated
-   * memory from tasks that have been deleted. It is therefore important that
-   * the idle task is not starved of microcontroller processing time if your
-   * application makes any calls to <tt>void vTaskDelete( TaskHandle_t xTask
-   * )</tt> Memory allocated by the task code is not automatically freed, and
-   * should be freed before the task is deleted.
-   *
-   * <b>Example Usage</b>
-   * @include Task/task.cpp
-   */
-  ~Task() {
-#if (INCLUDE_vTaskDelete == 1)
-
-    if (handle != NULL) {
-      vTaskDelete(handle);
-    }
-
-#endif /* INCLUDE_vTaskDelete */
-  }
+  ~Task() = default;
 
   Task(Task&&) noexcept = default;
   Task& operator=(Task&&) noexcept = default;

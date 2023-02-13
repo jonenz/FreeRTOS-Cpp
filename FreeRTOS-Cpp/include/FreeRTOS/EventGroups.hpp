@@ -52,12 +52,10 @@ class EventGroupBase {
   EventGroupBase(const EventGroupBase&) = delete;
   EventGroupBase& operator=(const EventGroupBase&) = delete;
 
-  static void* operator new(size_t, void*);
-  static void* operator new[](size_t, void*);
+  static void* operator new(size_t, void* ptr) { return ptr; }
+  static void* operator new[](size_t, void* ptr) { return ptr; }
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
-  static void operator delete(void*) = delete;
-  static void operator delete[](void*) = delete;
 
   // NOLINTNEXTLINE
   using EventBits = std::bitset<((configUSE_16_BIT_TICKS == 1) ? 8 : 24)>;
@@ -380,7 +378,21 @@ class EventGroupBase {
    * FreeRTOS::EventGroup or FreeRTOS::StaticEventGroup.
    */
   EventGroupBase() = default;
-  ~EventGroupBase() = default;
+
+  /**
+   * EventGroup.hpp
+   *
+   * @brief Destroy the EventGroupBase object by calling <tt>void
+   * vEventGroupDelete( EventGroupHandle_t xEventGroup )</tt>
+   *
+   * @see <https://www.freertos.org/vEventGroupDelete.html>
+   *
+   * Delete an event group.
+   *
+   * Tasks that are blocked on the event group being deleted will be unblocked,
+   * and report an event group value of 0.
+   */
+  ~EventGroupBase() { vEventGroupDelete(this->handle); };
 
   EventGroupBase(EventGroupBase&&) noexcept = default;
   EventGroupBase& operator=(EventGroupBase&&) noexcept = default;
@@ -425,21 +437,7 @@ class EventGroup : public EventGroupBase {
    * @include EventGroups/eventGroup.cpp
    */
   EventGroup() { this->handle = xEventGroupCreate(); }
-
-  /**
-   * EventGroup.hpp
-   *
-   * @brief Destroy the EventGroup object by calling <tt>void vEventGroupDelete(
-   * EventGroupHandle_t xEventGroup )</tt>
-   *
-   * @see <https://www.freertos.org/vEventGroupDelete.html>
-   *
-   * Delete an event group.
-   *
-   * Tasks that are blocked on the event group being deleted will be unblocked,
-   * and report an event group value of 0.
-   */
-  ~EventGroup() { vEventGroupDelete(this->handle); }
+  ~EventGroup() = default;
 
   EventGroup(const EventGroup&) = delete;
   EventGroup& operator=(const EventGroup&) = delete;

@@ -55,12 +55,10 @@ class MutexBase {
   MutexBase(const MutexBase&) = delete;
   MutexBase& operator=(const MutexBase&) = delete;
 
-  static void* operator new(size_t, void*);
-  static void* operator new[](size_t, void*);
+  static void* operator new(size_t, void* ptr) { return ptr; }
+  static void* operator new[](size_t, void* ptr) { return ptr; }
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
-  static void operator delete(void*) = delete;
-  static void operator delete[](void*) = delete;
 
   /**
    * Mutex.hpp
@@ -159,7 +157,19 @@ class MutexBase {
 
  private:
   MutexBase() = default;
-  ~MutexBase() = default;
+
+  /**
+   * Mutex.hpp
+   *
+   * @brief Destroy the MutexBase object by calling <tt>void vSemaphoreDelete(
+   * SemaphoreHandle_t xSemaphore )</tt>
+   *
+   * @see <https://www.freertos.org/a00113.html#vSemaphoreDelete>
+   *
+   * @note Do not delete a mutex that has tasks blocked on it (tasks that are in
+   * the Blocked state waiting for the mutex to become available).
+   */
+  ~MutexBase() { vSemaphoreDelete(this->handle); }
 
   MutexBase(MutexBase&&) noexcept = default;
   MutexBase& operator=(MutexBase&&) noexcept = default;
@@ -194,8 +204,6 @@ class RecursiveMutexBase : public MutexBase {
   static void* operator new[](size_t, void*);
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
-  static void operator delete(void*) = delete;
-  static void operator delete[](void*) = delete;
 
   /**
    * Mutex.hpp
@@ -298,19 +306,7 @@ class Mutex : public MutexBase {
    * @include Mutex/mutex.cpp
    */
   Mutex() { this->handle = xSemaphoreCreateMutex(); }
-
-  /**
-   * Mutex.hpp
-   *
-   * @brief Destroy the Mutex object by calling <tt>void vSemaphoreDelete(
-   * SemaphoreHandle_t xSemaphore )</tt>
-   *
-   * @see <https://www.freertos.org/a00113.html#vSemaphoreDelete>
-   *
-   * @note Do not delete a mutex that has tasks blocked on it (tasks that are in
-   * the Blocked state waiting for the mutex to become available).
-   */
-  ~Mutex() { vSemaphoreDelete(this->handle); }
+  ~Mutex() = default;
 
   Mutex(const Mutex&) = delete;
   Mutex& operator=(const Mutex&) = delete;
@@ -363,19 +359,7 @@ class RecursiveMutex : public RecursiveMutexBase {
    * @include Mutex/recursiveMutex.cpp
    */
   RecursiveMutex() { this->handle = xSemaphoreCreateRecursiveMutex(); }
-
-  /**
-   * Mutex.hpp
-   *
-   * @brief Destroy the RecursiveMutex object by calling <tt>void
-   * vSemaphoreDelete( SemaphoreHandle_t xSemaphore )</tt>
-   *
-   * @see <https://www.freertos.org/a00113.html#vSemaphoreDelete>
-   *
-   * @note Do not delete a mutex that has tasks blocked on it (tasks that are in
-   * the Blocked state waiting for the mutex to become available).
-   */
-  ~RecursiveMutex() { vSemaphoreDelete(this->handle); }
+  ~RecursiveMutex() = default;
 
   RecursiveMutex(const RecursiveMutex&) = delete;
   RecursiveMutex& operator=(const RecursiveMutex&) = delete;

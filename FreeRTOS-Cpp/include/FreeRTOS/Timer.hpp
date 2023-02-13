@@ -61,12 +61,10 @@ class TimerBase {
   TimerBase(const TimerBase&) = delete;
   TimerBase& operator=(const TimerBase&) = delete;
 
-  static void* operator new(size_t, void*);
-  static void* operator new[](size_t, void*);
+  static void* operator new(size_t, void* ptr) { return ptr; }
+  static void* operator new[](size_t, void* ptr) { return ptr; }
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
-  static void operator delete(void*) = delete;
-  static void operator delete[](void*) = delete;
 
   /**
    * Timer.hpp
@@ -847,9 +845,9 @@ class Timer : public TimerBase {
  * should create a class that derives from this class and implement
  * timerFunction().
  *
- * @warning This class contains the timer data structure, so any instace of this
- * class or class derived from this class should be persistent (not declared on
- * the stack of another function).
+ * @warning This class contains the timer data structure, so any instance of
+ * this class or class derived from this class should be persistent (not
+ * declared on the stack of another function).
  */
 class StaticTimer : public TimerBase {
  public:

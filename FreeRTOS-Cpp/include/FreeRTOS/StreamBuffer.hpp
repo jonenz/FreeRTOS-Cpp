@@ -65,12 +65,10 @@ class StreamBufferBase {
   StreamBufferBase(const StreamBufferBase&) = delete;
   StreamBufferBase& operator=(const StreamBufferBase&) = delete;
 
-  static void* operator new(size_t, void*);
-  static void* operator new[](size_t, void*);
+  static void* operator new(size_t, void* ptr) { return ptr; }
+  static void* operator new[](size_t, void* ptr) { return ptr; }
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
-  static void operator delete(void*) = delete;
-  static void operator delete[](void*) = delete;
 
   /**
    * StreamBuffer.hpp
@@ -422,7 +420,18 @@ class StreamBufferBase {
 
  private:
   StreamBufferBase() = default;
-  ~StreamBufferBase() = default;
+
+  /**
+   * StreamBuffer.hpp
+   *
+   * @brief Destroy the StreamBufferBase object by calling
+   * <tt>void vStreamBufferDelete( StreamBufferHandle_t xStreamBuffer )</tt>
+   *
+   * @see <https://www.freertos.org/vStreamBufferDelete.html>
+   *
+   * Deletes a stream buffer and free the allocated memory.
+   */
+  ~StreamBufferBase() { vStreamBufferDelete(this->handle); }
 
   StreamBufferBase(StreamBufferBase&&) noexcept = default;
   StreamBufferBase& operator=(StreamBufferBase&&) noexcept = default;
@@ -478,18 +487,7 @@ class StreamBuffer : public StreamBufferBase {
   explicit StreamBuffer(const size_t size, const size_t triggerLevel = 0) {
     this->handle = xStreamBufferCreate(size, triggerLevel);
   }
-
-  /**
-   * StreamBuffer.hpp
-   *
-   * @brief Destroy the StreamBuffer object by calling
-   * <tt>void vStreamBufferDelete( StreamBufferHandle_t xStreamBuffer )</tt>
-   *
-   * @see <https://www.freertos.org/vStreamBufferDelete.html>
-   *
-   * Deletes a stream buffer and free the allocated memory.
-   */
-  ~StreamBuffer() { vStreamBufferDelete(this->handle); }
+  ~StreamBuffer() = default;
 
   StreamBuffer(const StreamBuffer&) = delete;
   StreamBuffer& operator=(const StreamBuffer&) = delete;
