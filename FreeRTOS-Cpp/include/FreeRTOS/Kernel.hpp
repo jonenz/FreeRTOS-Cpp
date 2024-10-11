@@ -373,7 +373,7 @@ inline bool resumeAll() { return (xTaskResumeAll() == pdTRUE); }
 inline void stepTick(const TickType_t ticksToJump) {
   vTaskStepTick(ticksToJump);
 }
-#endif
+#endif /* configUSE_TICKLESS_IDLE */
 
 /**
  * Kernel.hpp
