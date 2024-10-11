@@ -350,7 +350,7 @@ class TaskBase {
   inline configSTACK_DEPTH_TYPE getStackHighWaterMark2() const {
     return uxTaskGetStackHighWaterMark2(handle);
   }
-#endif /* INCLUDE_uxTaskGetStackHighWaterMark */
+#endif /* INCLUDE_uxTaskGetStackHighWaterMark2 */
 
 #if (INCLUDE_eTaskGetState == 1)
   /**
