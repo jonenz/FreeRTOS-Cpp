@@ -52,10 +52,16 @@ class EventGroupBase {
   EventGroupBase(const EventGroupBase&) = delete;
   EventGroupBase& operator=(const EventGroupBase&) = delete;
 
-  static void* operator new(size_t, void* ptr) { return ptr; }
-  static void* operator new[](size_t, void* ptr) { return ptr; }
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
+
+  static void* operator new(size_t, void* ptr) {
+    return ptr;
+  }
+
+  static void* operator new[](size_t, void* ptr) {
+    return ptr;
+  }
 
   // NOLINTNEXTLINE
   using EventBits = std::bitset<((configUSE_16_BIT_TICKS == 1) ? 8 : 24)>;
@@ -70,7 +76,9 @@ class EventGroupBase {
    * @retval true the handle is not NULL.
    * @retval false the handle is NULL.
    */
-  inline bool isValid() const { return (handle != NULL); }
+  inline bool isValid() const {
+    return (handle != NULL);
+  }
 
   /**
    * EventGroups.hpp
@@ -217,7 +225,7 @@ class EventGroupBase {
                          const EventBits& bitsToSet) const {
     BaseType_t taskWoken = pdFALSE;
     const bool result = (xEventGroupSetBitsFromISR(handle, bitsToSet.to_ulong(),
-                                             &taskWoken) == pdPASS);
+                                                   &taskWoken) == pdPASS);
     if (taskWoken == pdTRUE) {
       higherPriorityTaskWoken = true;
     }
@@ -306,7 +314,9 @@ class EventGroupBase {
    * @return EventBits The value of the event bits in the event group at the
    * time get() was called.
    */
-  inline EventBits get() const { return EventBits(xEventGroupGetBits(handle)); }
+  inline EventBits get() const {
+    return EventBits(xEventGroupGetBits(handle));
+  }
 
   /**
    * EventGroups.hpp
@@ -392,7 +402,9 @@ class EventGroupBase {
    * Tasks that are blocked on the event group being deleted will be unblocked,
    * and report an event group value of 0.
    */
-  ~EventGroupBase() { vEventGroupDelete(this->handle); };
+  ~EventGroupBase() {
+    vEventGroupDelete(this->handle);
+  };
 
   EventGroupBase(EventGroupBase&&) noexcept = default;
   EventGroupBase& operator=(EventGroupBase&&) noexcept = default;
@@ -436,7 +448,9 @@ class EventGroup : public EventGroupBase {
    * <b>Example Usage</b>
    * @include EventGroups/eventGroup.cpp
    */
-  EventGroup() { this->handle = xEventGroupCreate(); }
+  EventGroup() {
+    this->handle = xEventGroupCreate();
+  }
   ~EventGroup() = default;
 
   EventGroup(const EventGroup&) = delete;

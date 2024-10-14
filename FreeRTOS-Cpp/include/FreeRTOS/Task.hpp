@@ -66,10 +66,16 @@ class TaskBase {
   TaskBase(const TaskBase&) = delete;
   TaskBase& operator=(const TaskBase&) = delete;
 
-  static void* operator new(size_t, void* ptr) { return ptr; }
-  static void* operator new[](size_t, void* ptr) { return ptr; }
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
+
+  static void* operator new(size_t, void* ptr) {
+    return ptr;
+  }
+
+  static void* operator new[](size_t, void* ptr) {
+    return ptr;
+  }
 
   enum class State {
     Running = eRunning,
@@ -126,7 +132,9 @@ class TaskBase {
    * <b>Example Usage</b>
    * @include Task/getPriority.cpp
    */
-  inline UBaseType_t getPriority() const { return uxTaskPriorityGet(handle); }
+  inline UBaseType_t getPriority() const {
+    return uxTaskPriorityGet(handle);
+  }
 #endif /* INCLUDE_uxTaskPriorityGet */
 
 #if (INCLUDE_vTaskPrioritySet == 1)
@@ -178,7 +186,9 @@ class TaskBase {
    * <b>Example Usage</b>
    * @include Task/suspend.cpp
    */
-  inline void suspend() const { vTaskSuspend(handle); }
+  inline void suspend() const {
+    vTaskSuspend(handle);
+  }
 
   /**
    * Task.hpp
@@ -199,7 +209,9 @@ class TaskBase {
    * <b>Example Usage</b>
    * @include Task/resume.cpp
    */
-  inline void resume() const { vTaskResume(handle); }
+  inline void resume() const {
+    vTaskResume(handle);
+  }
 
 #if (INCLUDE_xTaskResumeFromISR == 1)
   /**
@@ -265,7 +277,9 @@ class TaskBase {
    * @retval true Otherwise.
    * @retval false If the task was not in the Blocked state.
    */
-  inline bool abortDelay() const { return (xTaskAbortDelay(handle) == pdPASS); }
+  inline bool abortDelay() const {
+    return (xTaskAbortDelay(handle) == pdPASS);
+  }
 #endif /* INCLUDE_xTaskAbortDelay */
 
 #if (INCLUDE_xTaskGetIdleTaskHandle == 1)
@@ -389,7 +403,9 @@ class TaskBase {
    * @return const char* The text (human readable) name of the task.  A pointer
    * to the subject task's name, which is a standard NULL terminated C string.
    */
-  inline const char* getName() const { return pcTaskGetName(handle); }
+  inline const char* getName() const {
+    return pcTaskGetName(handle);
+  }
 
 #if (INCLUDE_xTaskGetHandle == 1)
   /**
@@ -751,9 +767,9 @@ class TaskBase {
     BaseType_t taskWoken = pdFALSE;
     uint32_t pulNotificationValue;
     const bool result = (xTaskNotifyAndQueryIndexedFromISR(
-                       handle, index, value.to_ulong(),
-                       static_cast<eNotifyAction>(action),
-                       &pulNotificationValue, &taskWoken) == pdPASS);
+                             handle, index, value.to_ulong(),
+                             static_cast<eNotifyAction>(action),
+                             &pulNotificationValue, &taskWoken) == pdPASS);
 
     if (taskWoken == pdTRUE) {
       higherPriorityTaskWoken = true;
@@ -780,9 +796,9 @@ class TaskBase {
       const UBaseType_t index = 0) const {
     uint32_t pulNotificationValue;
     const bool result = (xTaskNotifyAndQueryIndexedFromISR(
-                       handle, index, value.to_ulong(),
-                       static_cast<eNotifyAction>(action),
-                       &pulNotificationValue, NULL) == pdPASS);
+                             handle, index, value.to_ulong(),
+                             static_cast<eNotifyAction>(action),
+                             &pulNotificationValue, NULL) == pdPASS);
 
     return std::make_pair(result, NotificationBits(pulNotificationValue));
   }
@@ -854,9 +870,10 @@ class TaskBase {
                             const NotificationBits value = 0,
                             const UBaseType_t index = 0) const {
     BaseType_t taskWoken = pdFALSE;
-    const bool result = (xTaskNotifyIndexedFromISR(handle, index, value.to_ulong(),
-                                             static_cast<eNotifyAction>(action),
-                                             &taskWoken) == pdPASS);
+    const bool result =
+        (xTaskNotifyIndexedFromISR(handle, index, value.to_ulong(),
+                                   static_cast<eNotifyAction>(action),
+                                   &taskWoken) == pdPASS);
     if (taskWoken == pdTRUE) {
       higherPriorityTaskWoken = true;
     }
@@ -1334,7 +1351,9 @@ class Task : public TaskBase {
    * @return false If the task was not created successfully due to insufficient
    * memory.
    */
-  bool isValid() const { return taskCreatedSuccessfully; }
+  bool isValid() const {
+    return taskCreatedSuccessfully;
+  }
 
  protected:
   /**

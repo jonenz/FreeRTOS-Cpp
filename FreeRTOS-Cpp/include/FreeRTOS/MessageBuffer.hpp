@@ -65,10 +65,16 @@ class MessageBufferBase {
   MessageBufferBase(const MessageBufferBase&) = delete;
   MessageBufferBase& operator=(const MessageBufferBase&) = delete;
 
-  static void* operator new(size_t, void* ptr) { return ptr; }
-  static void* operator new[](size_t, void* ptr) { return ptr; }
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
+
+  static void* operator new(size_t, void* ptr) {
+    return ptr;
+  }
+
+  static void* operator new[](size_t, void* ptr) {
+    return ptr;
+  }
 
   /**
    * MessageBuffer.hpp
@@ -80,7 +86,9 @@ class MessageBufferBase {
    * @retval true If the handle is not NULL.
    * @retval false If the handle is NULL.
    */
-  inline bool isValid() const { return (handle != NULL); }
+  inline bool isValid() const {
+    return (handle != NULL);
+  }
 
   /**
    * MessageBuffer.hpp
@@ -178,7 +186,8 @@ class MessageBufferBase {
   inline size_t sendFromISR(bool& higherPriorityTaskWoken, const void* data,
                             const size_t length) const {
     BaseType_t taskWoken = pdFALSE;
-    const size_t result = xMessageBufferSendFromISR(handle, data, length, &taskWoken);
+    const size_t result =
+        xMessageBufferSendFromISR(handle, data, length, &taskWoken);
     if (taskWoken == pdTRUE) {
       higherPriorityTaskWoken = true;
     }
@@ -348,7 +357,9 @@ class MessageBufferBase {
    * @retval false If there was a task blocked waiting to send to or read from
    * the message buffer then the message buffer will not be reset.
    */
-  inline bool reset() const { return (xMessageBufferReset(handle) == pdPASS); }
+  inline bool reset() const {
+    return (xMessageBufferReset(handle) == pdPASS);
+  }
 
   /**
    * MessageBuffer.hpp
@@ -401,7 +412,9 @@ class MessageBufferBase {
    * Delete a queue - freeing all the memory allocated for storing of items
    * placed on the queue.
    */
-  ~MessageBufferBase() { vMessageBufferDelete(this->handle); }
+  ~MessageBufferBase() {
+    vMessageBufferDelete(this->handle);
+  }
 
   MessageBufferBase(MessageBufferBase&&) noexcept = default;
   MessageBufferBase& operator=(MessageBufferBase&&) noexcept = default;
