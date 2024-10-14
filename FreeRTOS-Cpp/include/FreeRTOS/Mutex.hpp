@@ -114,7 +114,7 @@ class MutexBase {
    */
   inline bool lockFromISR(bool& higherPriorityTaskWoken) const {
     BaseType_t taskWoken = pdFALSE;
-    bool result = (xSemaphoreTakeFromISR(handle, &taskWoken) == pdTRUE);
+    const bool result = (xSemaphoreTakeFromISR(handle, &taskWoken) == pdTRUE);
     if (taskWoken == pdTRUE) {
       higherPriorityTaskWoken = true;
     }

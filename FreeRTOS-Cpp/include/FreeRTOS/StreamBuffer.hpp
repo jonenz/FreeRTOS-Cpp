@@ -166,7 +166,7 @@ class StreamBufferBase {
   inline size_t sendFromISR(bool& higherPriorityTaskWoken, const void* data,
                             const size_t length) const {
     BaseType_t taskWoken = pdFALSE;
-    size_t result = xStreamBufferSendFromISR(handle, data, length, &taskWoken);
+    const size_t result = xStreamBufferSendFromISR(handle, data, length, &taskWoken);
     if (taskWoken == pdTRUE) {
       higherPriorityTaskWoken = true;
     }
@@ -273,7 +273,7 @@ class StreamBufferBase {
   inline size_t receiveFromISR(bool& higherPriorityTaskWoken, void* buffer,
                                const size_t bufferLength) const {
     BaseType_t taskWoken = pdFALSE;
-    size_t result =
+    const size_t result =
         xStreamBufferReceiveFromISR(handle, buffer, bufferLength, &taskWoken);
     if (taskWoken == pdTRUE) {
       higherPriorityTaskWoken = true;

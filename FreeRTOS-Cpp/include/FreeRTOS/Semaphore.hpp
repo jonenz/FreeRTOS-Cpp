@@ -147,7 +147,7 @@ class SemaphoreBase {
    */
   inline bool takeFromISR(bool& higherPriorityTaskWoken) const {
     BaseType_t taskWoken = pdFALSE;
-    bool result = (xSemaphoreTakeFromISR(handle, &taskWoken) == pdTRUE);
+    const bool result = (xSemaphoreTakeFromISR(handle, &taskWoken) == pdTRUE);
     if (taskWoken == pdTRUE) {
       higherPriorityTaskWoken = true;
     }
@@ -216,7 +216,7 @@ class SemaphoreBase {
    */
   inline bool giveFromISR(bool& higherPriorityTaskWoken) const {
     BaseType_t taskWoken = pdFALSE;
-    bool result = (xSemaphoreGiveFromISR(handle, &taskWoken) == pdTRUE);
+    const bool result = (xSemaphoreGiveFromISR(handle, &taskWoken) == pdTRUE);
     if (taskWoken == pdTRUE) {
       higherPriorityTaskWoken = true;
     }

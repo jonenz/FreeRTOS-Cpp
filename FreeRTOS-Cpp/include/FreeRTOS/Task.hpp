@@ -664,7 +664,7 @@ class TaskBase {
       const NotifyAction action, const NotificationBits value = 0,
       const UBaseType_t index = 0) const {
     uint32_t pulNotificationValue;
-    bool result =
+    const bool result =
         (xTaskNotifyAndQueryIndexed(handle, index, value.to_ulong(),
                                     static_cast<eNotifyAction>(action),
                                     &pulNotificationValue) == pdPASS);
@@ -750,7 +750,7 @@ class TaskBase {
       const NotificationBits value = 0, const UBaseType_t index = 0) const {
     BaseType_t taskWoken = pdFALSE;
     uint32_t pulNotificationValue;
-    bool result = (xTaskNotifyAndQueryIndexedFromISR(
+    const bool result = (xTaskNotifyAndQueryIndexedFromISR(
                        handle, index, value.to_ulong(),
                        static_cast<eNotifyAction>(action),
                        &pulNotificationValue, &taskWoken) == pdPASS);
@@ -779,7 +779,7 @@ class TaskBase {
       const NotifyAction action, const NotificationBits value = 0,
       const UBaseType_t index = 0) const {
     uint32_t pulNotificationValue;
-    bool result = (xTaskNotifyAndQueryIndexedFromISR(
+    const bool result = (xTaskNotifyAndQueryIndexedFromISR(
                        handle, index, value.to_ulong(),
                        static_cast<eNotifyAction>(action),
                        &pulNotificationValue, NULL) == pdPASS);
@@ -854,7 +854,7 @@ class TaskBase {
                             const NotificationBits value = 0,
                             const UBaseType_t index = 0) const {
     BaseType_t taskWoken = pdFALSE;
-    bool result = (xTaskNotifyIndexedFromISR(handle, index, value.to_ulong(),
+    const bool result = (xTaskNotifyIndexedFromISR(handle, index, value.to_ulong(),
                                              static_cast<eNotifyAction>(action),
                                              &taskWoken) == pdPASS);
     if (taskWoken == pdTRUE) {
@@ -970,7 +970,7 @@ class TaskBase {
       const NotificationBits bitsToClearOnExit = 0,
       const UBaseType_t index = 0) {
     uint32_t pulNotificationValue;
-    bool result =
+    const bool result =
         (xTaskNotifyWaitIndexed(index, bitsToClearOnEntry.to_ulong(),
                                 bitsToClearOnExit.to_ulong(),
                                 &pulNotificationValue, ticksToWait) == pdTRUE);

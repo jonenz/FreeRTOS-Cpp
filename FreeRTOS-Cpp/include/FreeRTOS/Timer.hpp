@@ -195,7 +195,7 @@ class TimerBase {
    */
   inline bool startFromISR(bool& higherPriorityTaskWoken) const {
     BaseType_t taskWoken = pdFALSE;
-    bool result = (xTimerStartFromISR(handle, &taskWoken) == pdPASS);
+    const bool result = (xTimerStartFromISR(handle, &taskWoken) == pdPASS);
     if (taskWoken == pdTRUE) {
       higherPriorityTaskWoken = true;
     }
@@ -284,7 +284,7 @@ class TimerBase {
    */
   inline bool stopFromISR(bool& higherPriorityTaskWoken) const {
     BaseType_t taskWoken = pdFALSE;
-    bool result = (xTimerStopFromISR(handle, &taskWoken) == pdPASS);
+    const bool result = (xTimerStopFromISR(handle, &taskWoken) == pdPASS);
     if (taskWoken == pdTRUE) {
       higherPriorityTaskWoken = true;
     }
@@ -392,7 +392,7 @@ class TimerBase {
   inline bool changePeriodFromISR(bool& higherPriorityTaskWoken,
                                   const TickType_t newPeriod) const {
     BaseType_t taskWoken = pdFALSE;
-    bool result =
+    const bool result =
         (xTimerChangePeriodFromISR(handle, newPeriod, &taskWoken) == pdPASS);
     if (taskWoken == pdTRUE) {
       higherPriorityTaskWoken = true;
@@ -536,7 +536,7 @@ class TimerBase {
    */
   inline bool resetFromISR(bool& higherPriorityTaskWoken) const {
     BaseType_t taskWoken = pdFALSE;
-    bool result = (xTimerResetFromISR(handle, &taskWoken) == pdPASS);
+    const bool result = (xTimerResetFromISR(handle, &taskWoken) == pdPASS);
     if (taskWoken == pdTRUE) {
       higherPriorityTaskWoken = true;
     }

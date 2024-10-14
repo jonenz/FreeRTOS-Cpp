@@ -216,7 +216,7 @@ class EventGroupBase {
   inline bool setFromISR(bool& higherPriorityTaskWoken,
                          const EventBits& bitsToSet) const {
     BaseType_t taskWoken = pdFALSE;
-    bool result = (xEventGroupSetBitsFromISR(handle, bitsToSet.to_ulong(),
+    const bool result = (xEventGroupSetBitsFromISR(handle, bitsToSet.to_ulong(),
                                              &taskWoken) == pdPASS);
     if (taskWoken == pdTRUE) {
       higherPriorityTaskWoken = true;
