@@ -28,12 +28,12 @@
 #ifndef FREERTOS_EVENTGROUPS_HPP
 #define FREERTOS_EVENTGROUPS_HPP
 
+#if (configUSE_EVENT_GROUPS == 1)
+
 #include <bitset>
 
 #include "FreeRTOS.h"
 #include "event_groups.h"
-
-#if (configUSE_EVENT_GROUPS == 1)
 
 namespace FreeRTOS {
 
