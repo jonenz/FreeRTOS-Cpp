@@ -33,6 +33,8 @@
 #include "FreeRTOS.h"
 #include "event_groups.h"
 
+#if (configUSE_EVENT_GROUPS == 1)
+
 namespace FreeRTOS {
 
 /**
@@ -63,8 +65,13 @@ class EventGroupBase {
     return ptr;
   }
 
-  // NOLINTNEXTLINE
-  using EventBits = std::bitset<((configUSE_16_BIT_TICKS == 1) ? 8 : 24)>;
+#if (configTICK_TYPE_WIDTH_IN_BITS == TICK_TYPE_WIDTH_16_BITS)
+  using EventBits = std::bitset<8>;  // NOLINT
+#elif (configTICK_TYPE_WIDTH_IN_BITS == TICK_TYPE_WIDTH_32_BITS)
+  using EventBits = std::bitset<24>;  // NOLINT
+#elif (configTICK_TYPE_WIDTH_IN_BITS == TICK_TYPE_WIDTH_64_BITS)
+  using EventBits = std::bitset<56>;  // NOLINT
+#endif
 
   /**
    * EventGroups.hpp
@@ -513,5 +520,7 @@ class StaticEventGroup : public EventGroupBase {
 #endif /* configSUPPORT_STATIC_ALLOCATION */
 
 }  // namespace FreeRTOS
+
+#endif /* configUSE_EVENT_GROUPS */
 
 #endif  // FREERTOS_EVENTGROUPS_HPP
