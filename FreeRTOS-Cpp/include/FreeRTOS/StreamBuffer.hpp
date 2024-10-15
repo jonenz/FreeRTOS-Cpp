@@ -28,6 +28,8 @@
 #ifndef FREERTOS_STREAMBUFFER_HPP
 #define FREERTOS_STREAMBUFFER_HPP
 
+#if (configUSE_STREAM_BUFFERS == 1)
+
 #include "FreeRTOS.h"
 #include "stream_buffer.h"
 
@@ -577,5 +579,7 @@ class StaticStreamBuffer : public StreamBufferBase {
 #endif /* configSUPPORT_STATIC_ALLOCATION */
 
 }  // namespace FreeRTOS
+
+#endif /* configUSE_STREAM_BUFFERS */
 
 #endif  // FREERTOS_STREAMBUFFER_HPP
