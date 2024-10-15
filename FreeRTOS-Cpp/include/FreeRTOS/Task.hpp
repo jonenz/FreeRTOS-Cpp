@@ -94,8 +94,7 @@ class TaskBase {
     SetValueWithoutOverwrite = eSetValueWithoutOverwrite,
   };
 
-  // NOLINTNEXTLINE
-  using NotificationBits = std::bitset<32>;
+  using NotificationBits = std::bitset<32>;  // NOLINT
 
   /**
    * Task.hpp
@@ -163,6 +162,45 @@ class TaskBase {
     vTaskPrioritySet(handle, newPriority);
   }
 #endif /* INCLUDE_vTaskPrioritySet */
+
+#if ((INCLUDE_uxTaskPriorityGet == 1) && (configUSE_MUTEXES == 1))
+  /**
+   * Task.hpp
+   *
+   * @brief Function that calls <tt>UBaseType_t uxTaskBasePriorityGet( const
+   * TaskHandle_t xTask )</tt>
+   *
+   * @see
+   * <https://www.freertos.org/Documentation/02-Kernel/04-API-references/02-Task-control/11-uxTaskBasePriorityGet>
+   *
+   * INCLUDE_uxTaskPriorityGet and configUSE_MUTEXES must be defined as 1 for
+   * this function to be available. See the configuration section for more
+   * information.
+   *
+   * Obtain the base priority of any task.
+   *
+   * @return UBaseType_t The base priority of the task.
+   */
+  inline UBaseType_t getBasePriority() const {
+    return uxTaskBasePriorityGet(handle);
+  }
+
+  /**
+   * @brief Function that calls <tt>UBaseType_t uxTaskBasePriorityGetFromISR(
+   * const TaskHandle_t xTask )</tt>
+   *
+   * INCLUDE_uxTaskPriorityGet and configUSE_MUTEXES must be defined as 1 for
+   * this function to be available. See the configuration section for more
+   * information.
+   *
+   * Obtain the base priority of any task.
+   *
+   * @return UBaseType_t The base priority of the task.
+   */
+  inline UBaseType_t getBasePriorityFromISR() const {
+    return uxTaskBasePriorityGetFromISR(handle);
+  }
+#endif /* (INCLUDE_uxTaskPriorityGet == 1) && (configUSE_MUTEXES == 1) */
 
 #if (INCLUDE_vTaskSuspend == 1)
   /**
