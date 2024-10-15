@@ -571,7 +571,7 @@ class TimerBase {
    * Timer.hpp
    *
    * @brief Function that calls <tt>void vTimerSetReloadMode( TimerHandle_t
-   * xTimer, const UBaseType_t uxAutoReload )</tt>
+   * xTimer, const UBaseType_t xAutoReload )</tt>
    *
    * @see <https://www.freertos.org/FreeRTOS-Timers-vTimerSetReloadMode.html>
    *
@@ -786,7 +786,7 @@ class Timer : public TimerBase {
    *
    * @brief Construct a new Timer object by calling <tt>TimerHandle_t
    * xTimerCreate( const char * const pcTimerName, const TickType_t
-   * xTimerPeriod, const UBaseType_t uxAutoReload, void * const pvTimerID,
+   * xTimerPeriod, const UBaseType_t xAutoReload, void * const pvTimerID,
    * TimerCallbackFunction_t pxCallbackFunction )</tt>
    *
    * @see <https://www.freertos.org/FreeRTOS-timers-xTimerCreate.html>
@@ -876,7 +876,7 @@ class StaticTimer : public TimerBase {
    *
    * @brief Construct a new StaticTimer object by calling <tt>TimerHandle_t
    * xTimerCreateStatic( const char * const pcTimerName, const TickType_t
-   * xTimerPeriod, const UBaseType_t uxAutoReload, void * const pvTimerID,
+   * xTimerPeriod, const UBaseType_t xAutoReload, void * const pvTimerID,
    * TimerCallbackFunction_t pxCallbackFunction StaticTimer_t *pxTimerBuffer
    * )</tt>
    *
