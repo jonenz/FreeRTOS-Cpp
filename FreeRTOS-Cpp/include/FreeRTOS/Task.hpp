@@ -887,101 +887,6 @@ class TaskBase {
   /**
    * Task.hpp
    *
-   * @brief Function that calls <tt>BaseType_t xTaskNotifyWaitIndexed(
-   * UBaseType_t uxIndexToWaitOn, uint32_t ulBitsToClearOnEntry, uint32_t
-   * ulBitsToClearOnExit, uint32_t *pulNotificationValue, TickType_t
-   * xTicksToWait )</tt>
-   *
-   * @see <https://www.freertos.org/xTaskNotifyWait.html>
-   *
-   * configUSE_TASK_NOTIFICATIONS must be undefined or defined as 1 for these
-   * functions to be available.
-   *
-   * Each task has an array of 'task notifications' (or just 'notifications'),
-   * each of which has a state and a 32-bit value. A direct to task notification
-   * is an event sent directly to a task that can unblock the receiving task,
-   * and optionally update one of the receiving task’s notification values in a
-   * number of different ways. For example, a notification may overwrite one of
-   * the receiving task’s notification values, or just set one or more bits in
-   * one of the receiving task’s notification values.
-   *
-   * notifyWait() waits, with an optional timeout, for the calling task to
-   * receive a notification. If the receiving RTOS task was already Blocked
-   * waiting for a notification when the notification it is waiting for arrives
-   * the receiving RTOS task will be removed from the Blocked state and the
-   * notification cleared.
-   *
-   * @note Each notification within the array operates independently - a task
-   * can only block on one notification within the array at a time and will not
-   * be unblocked by a notification sent to any other array index.
-   *
-   * notifyGive() must not be called from an interrupt service routine. Use
-   * notifyGiveFromISR() instead.
-   *
-   * @param ticksToWait The maximum time to wait in the Blocked state for a
-   * notification to be received if a notification is not already pending when
-   * notifyWait() is called.
-   *
-   * The RTOS task does not consume any CPU time when it is in the Blocked
-   * state.
-   *
-   * The time is specified in RTOS tick periods. The pdMS_TO_TICKS() macro can
-   * be used to convert a time specified in milliseconds into a time specified
-   * in ticks.
-   *
-   * @param bitsToClearOnEntry Any bits set in bitsToClearOnEntry will be
-   * cleared in the calling RTOS task's notification value on entry to the
-   * notifyWait() function (before the task waits for a new notification)
-   * provided a notification is not already pending when notifyWait() is called.
-   *
-   * For example, if bitsToClearOnEntry is 0x01, then bit 0 of the task's
-   * notification value will be cleared on entry to the function.
-   *
-   * Setting bitsToClearOnEntry to 0xffffffff (ULONG_MAX) will clear all the
-   * bits in the task's notification value, effectively clearing the value to 0.
-   *
-   * @param bitsToClearOnExit Any bits set in bitsToClearOnExit will be cleared
-   * in the calling RTOS task's notification value before notifyWait() function
-   * exits if a notification was received.
-   *
-   * The bits are cleared after the RTOS task's notification value are returned.
-   *
-   * For example, if bitsToClearOnExit is 0x03, then bit 0 and bit 1 of the
-   * task's notification value will be cleared before the function exits.
-   *
-   * Setting bitsToClearOnExit to 0xffffffff (ULONG_MAX) will clear all the bits
-   * in the task's notification value, effectively clearing the value to 0.
-   *
-   * @param index The index within the calling task's array of notification
-   * values on which the calling task will wait for a notification to be
-   * received. index must be less than configTASK_NOTIFICATION_ARRAY_ENTRIES.
-   *
-   * @retval true If a notification was received, or a notification was already
-   * pending when notifyWait() was called.
-   * @retval false If the call to notifyWait() timed out before a notification
-   * was received.
-   * @return The RTOS task's notification value as it was before any bits were
-   * cleared due to the bitsToClearOnExit setting.
-   *
-   * <b>Example Usage</b>
-   * @include Task/notifyWait.cpp
-   */
-  inline static std::pair<bool, NotificationBits> notifyWait(
-      const TickType_t ticksToWait = portMAX_DELAY,
-      const NotificationBits bitsToClearOnEntry = 0,
-      const NotificationBits bitsToClearOnExit = 0,
-      const UBaseType_t index = 0) {
-    uint32_t pulNotificationValue;
-    bool result =
-        (xTaskNotifyWaitIndexed(index, bitsToClearOnEntry.to_ulong(),
-                                bitsToClearOnExit.to_ulong(),
-                                &pulNotificationValue, ticksToWait) == pdTRUE);
-    return std::make_pair(result, NotificationBits(pulNotificationValue));
-  }
-
-  /**
-   * Task.hpp
-   *
    * @brief Function that calls <tt>BaseType_t xTaskNotifyStateClearIndexed(
    * TaskHandle_t xTask, UBaseType_t uxIndexToClear )</tt>
    *
@@ -1244,6 +1149,101 @@ class TaskBase {
       const bool clearCountOnExit = true, const UBaseType_t index = 0) {
     return NotificationBits(
         ulTaskNotifyTakeIndexed(index, clearCountOnExit, ticksToWait));
+  }
+
+  /**
+   * Task.hpp
+   *
+   * @brief Function that calls <tt>BaseType_t xTaskNotifyWaitIndexed(
+   * UBaseType_t uxIndexToWaitOn, uint32_t ulBitsToClearOnEntry, uint32_t
+   * ulBitsToClearOnExit, uint32_t *pulNotificationValue, TickType_t
+   * xTicksToWait )</tt>
+   *
+   * @see <https://www.freertos.org/xTaskNotifyWait.html>
+   *
+   * configUSE_TASK_NOTIFICATIONS must be undefined or defined as 1 for these
+   * functions to be available.
+   *
+   * Each task has an array of 'task notifications' (or just 'notifications'),
+   * each of which has a state and a 32-bit value. A direct to task notification
+   * is an event sent directly to a task that can unblock the receiving task,
+   * and optionally update one of the receiving task’s notification values in a
+   * number of different ways. For example, a notification may overwrite one of
+   * the receiving task’s notification values, or just set one or more bits in
+   * one of the receiving task’s notification values.
+   *
+   * notifyWait() waits, with an optional timeout, for the calling task to
+   * receive a notification. If the receiving RTOS task was already Blocked
+   * waiting for a notification when the notification it is waiting for arrives
+   * the receiving RTOS task will be removed from the Blocked state and the
+   * notification cleared.
+   *
+   * @note Each notification within the array operates independently - a task
+   * can only block on one notification within the array at a time and will not
+   * be unblocked by a notification sent to any other array index.
+   *
+   * notifyGive() must not be called from an interrupt service routine. Use
+   * notifyGiveFromISR() instead.
+   *
+   * @param ticksToWait The maximum time to wait in the Blocked state for a
+   * notification to be received if a notification is not already pending when
+   * notifyWait() is called.
+   *
+   * The RTOS task does not consume any CPU time when it is in the Blocked
+   * state.
+   *
+   * The time is specified in RTOS tick periods. The pdMS_TO_TICKS() macro can
+   * be used to convert a time specified in milliseconds into a time specified
+   * in ticks.
+   *
+   * @param bitsToClearOnEntry Any bits set in bitsToClearOnEntry will be
+   * cleared in the calling RTOS task's notification value on entry to the
+   * notifyWait() function (before the task waits for a new notification)
+   * provided a notification is not already pending when notifyWait() is called.
+   *
+   * For example, if bitsToClearOnEntry is 0x01, then bit 0 of the task's
+   * notification value will be cleared on entry to the function.
+   *
+   * Setting bitsToClearOnEntry to 0xffffffff (ULONG_MAX) will clear all the
+   * bits in the task's notification value, effectively clearing the value to 0.
+   *
+   * @param bitsToClearOnExit Any bits set in bitsToClearOnExit will be cleared
+   * in the calling RTOS task's notification value before notifyWait() function
+   * exits if a notification was received.
+   *
+   * The bits are cleared after the RTOS task's notification value are returned.
+   *
+   * For example, if bitsToClearOnExit is 0x03, then bit 0 and bit 1 of the
+   * task's notification value will be cleared before the function exits.
+   *
+   * Setting bitsToClearOnExit to 0xffffffff (ULONG_MAX) will clear all the bits
+   * in the task's notification value, effectively clearing the value to 0.
+   *
+   * @param index The index within the calling task's array of notification
+   * values on which the calling task will wait for a notification to be
+   * received. index must be less than configTASK_NOTIFICATION_ARRAY_ENTRIES.
+   *
+   * @retval true If a notification was received, or a notification was already
+   * pending when notifyWait() was called.
+   * @retval false If the call to notifyWait() timed out before a notification
+   * was received.
+   * @return The RTOS task's notification value as it was before any bits were
+   * cleared due to the bitsToClearOnExit setting.
+   *
+   * <b>Example Usage</b>
+   * @include Task/notifyWait.cpp
+   */
+  inline static std::pair<bool, NotificationBits> notifyWait(
+      const TickType_t ticksToWait = portMAX_DELAY,
+      const NotificationBits bitsToClearOnEntry = 0,
+      const NotificationBits bitsToClearOnExit = 0,
+      const UBaseType_t index = 0) {
+    uint32_t pulNotificationValue;
+    bool result =
+        (xTaskNotifyWaitIndexed(index, bitsToClearOnEntry.to_ulong(),
+                                bitsToClearOnExit.to_ulong(),
+                                &pulNotificationValue, ticksToWait) == pdTRUE);
+    return std::make_pair(result, NotificationBits(pulNotificationValue));
   }
 
  private:
