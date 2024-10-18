@@ -1067,8 +1067,8 @@ class TaskBase {
   /**
    * Task.hpp
    *
-   * @brief Function that calls <tt>void vTaskCoreAffinitySet(const TaskHandle_t
-   * xTask, UBaseType_t uxCoreAffinityMask)</tt>
+   * @brief Function that calls <tt>void vTaskCoreAffinitySet( const
+   * TaskHandle_t xTask, UBaseType_t uxCoreAffinityMask )</tt>
    *
    * @see
    * <https://www.freertos.org/Documentation/02-Kernel/02-Kernel-features/13-Symmetric-multiprocessing-introduction#vtaskcoreaffinityset>
@@ -1090,8 +1090,8 @@ class TaskBase {
   /**
    * Task.hpp
    *
-   * @brief Function that calls <tt>UBaseType_t vTaskCoreAffinityGet(const
-   * TaskHandle_t xTask)</tt>
+   * @brief Function that calls <tt>UBaseType_t vTaskCoreAffinityGet( const
+   * TaskHandle_t xTask )</tt>
    *
    * @see
    * <https://www.freertos.org/Documentation/02-Kernel/02-Kernel-features/13-Symmetric-multiprocessing-introduction#vtaskcoreaffinityget>
@@ -1116,8 +1116,8 @@ class TaskBase {
   /**
    * Task.hpp
    *
-   * @brief Function that calls <tt>void vTaskPreemptionDisable(const
-   * TaskHandle_t xTask)</tt>
+   * @brief Function that calls <tt>void vTaskPreemptionDisable( const
+   * TaskHandle_t xTask )</tt>
    *
    * @see
    * <https://www.freertos.org/Documentation/02-Kernel/02-Kernel-features/13-Symmetric-multiprocessing-introduction#vtaskpreemptiondisable>
@@ -1128,15 +1128,13 @@ class TaskBase {
    * <b>Example Usage</b>
    * @include Task/disablePreemption.cpp
    */
-  inline void disablePreemption() {
-    vTaskPreemptionDisable(handle);
-  }
+  inline void disablePreemption() { vTaskPreemptionDisable(handle); }
 
   /**
    * Task.hpp
    *
-   * @brief Function that calls <tt>void vTaskPreemptionEnable(const
-   * TaskHandle_t xTask)</tt>
+   * @brief Function that calls <tt>void vTaskPreemptionEnable( const
+   * TaskHandle_t xTask )</tt>
    *
    * @see
    * <https://www.freertos.org/Documentation/02-Kernel/02-Kernel-features/13-Symmetric-multiprocessing-introduction#vtaskpreemptionenable>
@@ -1147,9 +1145,7 @@ class TaskBase {
    * <b>Example Usage</b>
    * @include Task/disablePreemption.cpp
    */
-  inline void enablePreemption() {
-    vTaskPreemptionEnable(handle);
-  }
+  inline void enablePreemption() { vTaskPreemptionEnable(handle); }
 #endif /* (configUSE_TASK_PREEMPTION_DISABLE == 1) */
 
  protected:
