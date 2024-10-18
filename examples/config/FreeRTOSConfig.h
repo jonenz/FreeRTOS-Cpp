@@ -103,6 +103,10 @@
 #define configENABLE_BACKWARD_COMPATIBILITY     1
 #define configNUM_THREAD_LOCAL_STORAGE_POINTERS 5
 #define configENABLE_MPU                        0
+#define configUSE_CORE_AFFINITY                 1
+#define configNUMBER_OF_CORES                   2
+#define configUSE_TASK_PREEMPTION_DISABLE       1
+#define configUSE_PASSIVE_IDLE_HOOK             1
 
 /* Used memory allocation (heap_x.c) */
 #define configFRTOS_MEMORY_SCHEME               4

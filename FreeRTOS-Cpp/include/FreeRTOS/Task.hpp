@@ -88,9 +88,6 @@ class TaskBase {
     SetValueWithoutOverwrite = eSetValueWithoutOverwrite,
   };
 
-  // NOLINTNEXTLINE
-  using NotificationBits = std::bitset<32>;
-
   /**
    * Task.hpp
    *
@@ -418,6 +415,9 @@ class TaskBase {
 #endif /* INCLUDE_xTaskGetHandle */
 
 #if (configUSE_TASK_NOTIFICATIONS == 1)
+
+  using NotificationBits = std::bitset<32>;  // NOLINT
+
   /**
    * Task.hpp
    *
@@ -1059,6 +1059,98 @@ class TaskBase {
         ulTaskNotifyValueClearIndexed(handle, index, bitsToClear.to_ulong()));
   }
 #endif /* configUSE_TASK_NOTIFICATIONS */
+
+#if (configUSE_CORE_AFFINITY == 1)
+
+  using CoreMaskBits = std::bitset<configNUMBER_OF_CORES>;
+
+  /**
+   * Task.hpp
+   *
+   * @brief Function that calls <tt>void vTaskCoreAffinitySet(const TaskHandle_t
+   * xTask, UBaseType_t uxCoreAffinityMask)</tt>
+   *
+   * @see
+   * <https://www.freertos.org/Documentation/02-Kernel/02-Kernel-features/13-Symmetric-multiprocessing-introduction#vtaskcoreaffinityset>
+   *
+   * configUSE_CORE_AFFINITY must be defined as  1 for this function to be
+   * available. Sets the core affinity mask for a task, i.e. the cores on which
+   * a task can run.
+   *
+   * @param coreAffinityMaskA bitwise value that indicates the cores on which
+   * the task can run. Cores are numbered from 0 to configNUM_CORES - 1.
+   *
+   * <b>Example Usage</b>
+   * @include Task/setCoreAffinity.cpp
+   */
+  inline void setCoreAffinity(const CoreMaskBits coreAffinityMask) {
+    vTaskCoreAffinitySet(coreAffinityMask.to_ulong());
+  }
+
+  /**
+   * Task.hpp
+   *
+   * @brief Function that calls <tt>UBaseType_t vTaskCoreAffinityGet(const
+   * TaskHandle_t xTask)</tt>
+   *
+   * @see
+   * <https://www.freertos.org/Documentation/02-Kernel/02-Kernel-features/13-Symmetric-multiprocessing-introduction#vtaskcoreaffinityget>
+   *
+   * configUSE_CORE_AFFINITY must be defined as  1 for this function to be
+   * available. Gets the core affinity mask for a task, i.e. the cores on which
+   * a task can run.
+   *
+   * @return CoreMaskBits The core affinity mask, which is a bitwise value that
+   * indicates the cores on which a task can run. Cores are numbered from 0 to
+   * configNUM_CORES - 1.
+   *
+   * <b>Example Usage</b>
+   * @include Task/getCoreAffinity.cpp
+   */
+  inline CoreMaskBits getCoreAffinity() {
+    return CoreMaskBits(vTaskCoreAffinityGet(handle));
+  }
+#endif /* (configUSE_CORE_AFFINITY == 1) */
+
+#if (configUSE_TASK_PREEMPTION_DISABLE == 1)
+  /**
+   * Task.hpp
+   *
+   * @brief Function that calls <tt>void vTaskPreemptionDisable(const
+   * TaskHandle_t xTask)</tt>
+   *
+   * @see
+   * <https://www.freertos.org/Documentation/02-Kernel/02-Kernel-features/13-Symmetric-multiprocessing-introduction#vtaskpreemptiondisable>
+   *
+   * configUSE_TASK_PREEMPTION_DISABLE must be defined as 1 for this function to
+   * be available. Disables preemption for a task.
+   *
+   * <b>Example Usage</b>
+   * @include Task/disablePreemption.cpp
+   */
+  inline void disablePreemption() {
+    vTaskPreemptionDisable(handle);
+  }
+
+  /**
+   * Task.hpp
+   *
+   * @brief Function that calls <tt>void vTaskPreemptionEnable(const
+   * TaskHandle_t xTask)</tt>
+   *
+   * @see
+   * <https://www.freertos.org/Documentation/02-Kernel/02-Kernel-features/13-Symmetric-multiprocessing-introduction#vtaskpreemptionenable>
+   *
+   * configUSE_TASK_PREEMPTION_DISABLE must be defined as 1 for this function to
+   * be available. Disables preemption for a task.
+   *
+   * <b>Example Usage</b>
+   * @include Task/disablePreemption.cpp
+   */
+  inline void enablePreemption() {
+    vTaskPreemptionEnable(handle);
+  }
+#endif /* (configUSE_TASK_PREEMPTION_DISABLE == 1) */
 
  protected:
   /**
