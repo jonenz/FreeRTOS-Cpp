@@ -15,6 +15,7 @@ add_subdirectory(${FREERTOS_CPP_PATH})
 
 ## FreeRTOS Kernel Config ##
 # Include the FreeRTOS kernel and configure it for the ARM M0 port so the examples will compile.
+set(FREERTOS_KERNEL_PATH ${CMAKE_CURRENT_LIST_DIR}/FreeRTOS-Kernel)
 set(FREERTOS_PORT GCC_ARM_CM0 CACHE STRING \"\")
 set(FREERTOS_HEAP 4)
 add_library(freertos_config INTERFACE)
@@ -25,7 +26,7 @@ target_compile_options(freertos_config INTERFACE
     "-mcpu=cortex-m0"
     "-fno-exceptions"
 )
-add_subdirectory(FreeRTOS-Kernel)
+add_subdirectory(${FREERTOS_KERNEL_PATH})
 
 ## Examples' Configuration ##
 add_custom_target(example-all)
@@ -67,6 +68,12 @@ if (CLANG_TIDY)
         "${FREERTOS_CPP_PATH}/include/*"
     )
 
+    get_target_property(FREERTOS_KERNEL_CONFIG_INCLUDE_DIRS freertos_config INTERFACE_INCLUDE_DIRECTORIES)
+    get_target_property(FREERTOS_KERNEL_INCLUDE_DIRS freertos_kernel_include INTERFACE_INCLUDE_DIRECTORIES)
+    get_target_property(FREERTOS_KERNEL_PORT_INCLUDE_DIRS freertos_kernel_port_headers INTERFACE_INCLUDE_DIRECTORIES)
+    file(GENERATE OUTPUT port_include_dirs.txt CONTENT "${FREERTOS_KERNEL_PORT_INCLUDE_DIRS}")
+    file(READ ${CMAKE_BINARY_DIR}/port_include_dirs.txt FREERTOS_KERNEL_PORT_INCLUDE_DIRS)
+
     add_custom_target( clang-tidy
         COMMAND clang-tidy
         ${CLANG_TIDY_FILES}
@@ -74,9 +81,9 @@ if (CLANG_TIDY)
         --
         -std=c++17
         -I ${FREERTOS_CPP_PATH}/include
-        -I ${FREERTOS_KERNEL_CONFIG}
-        -I ${FREERTOS_KERNEL_PATH}/include
-        -I ${FREERTOS_KERNEL_PORT}
+        -I ${FREERTOS_KERNEL_CONFIG_INCLUDE_DIRS}
+        -I ${FREERTOS_KERNEL_INCLUDE_DIRS}
+        -I ${FREERTOS_KERNEL_PORT_INCLUDE_DIRS}
     )
 endif()
 
