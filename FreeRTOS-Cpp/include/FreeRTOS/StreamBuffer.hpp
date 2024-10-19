@@ -31,6 +31,8 @@
 #include "FreeRTOS.h"
 #include "stream_buffer.h"
 
+#if (configUSE_STREAM_BUFFERS == 1)
+
 namespace FreeRTOS {
 
 /**
@@ -65,10 +67,16 @@ class StreamBufferBase {
   StreamBufferBase(const StreamBufferBase&) = delete;
   StreamBufferBase& operator=(const StreamBufferBase&) = delete;
 
-  static void* operator new(size_t, void* ptr) { return ptr; }
-  static void* operator new[](size_t, void* ptr) { return ptr; }
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
+
+  static void* operator new(size_t, void* ptr) {
+    return ptr;
+  }
+
+  static void* operator new[](size_t, void* ptr) {
+    return ptr;
+  }
 
   /**
    * StreamBuffer.hpp
@@ -80,7 +88,9 @@ class StreamBufferBase {
    * @retval true If the handle is not NULL.
    * @retval false If the handle is NULL.
    */
-  inline bool isValid() const { return (handle != NULL); }
+  inline bool isValid() const {
+    return (handle != NULL);
+  }
 
   /**
    * StreamBuffer.hpp
@@ -166,7 +176,8 @@ class StreamBufferBase {
   inline size_t sendFromISR(bool& higherPriorityTaskWoken, const void* data,
                             const size_t length) const {
     BaseType_t taskWoken = pdFALSE;
-    size_t result = xStreamBufferSendFromISR(handle, data, length, &taskWoken);
+    const size_t result =
+        xStreamBufferSendFromISR(handle, data, length, &taskWoken);
     if (taskWoken == pdTRUE) {
       higherPriorityTaskWoken = true;
     }
@@ -273,7 +284,7 @@ class StreamBufferBase {
   inline size_t receiveFromISR(bool& higherPriorityTaskWoken, void* buffer,
                                const size_t bufferLength) const {
     BaseType_t taskWoken = pdFALSE;
-    size_t result =
+    const size_t result =
         xStreamBufferReceiveFromISR(handle, buffer, bufferLength, &taskWoken);
     if (taskWoken == pdTRUE) {
       higherPriorityTaskWoken = true;
@@ -382,7 +393,9 @@ class StreamBufferBase {
    * @return false  If there was a task blocked waiting to send to or read from
    * the stream buffer then the stream buffer was not reset.
    */
-  inline bool reset() const { return (xStreamBufferReset(handle) == pdPASS); }
+  inline bool reset() const {
+    return (xStreamBufferReset(handle) == pdPASS);
+  }
 
   /**
    * StreamBuffer.hpp
@@ -416,7 +429,9 @@ class StreamBufferBase {
    * @return true If the stream buffer is full.
    * @return false Otherwise.
    */
-  inline bool isFull() const { return (xStreamBufferIsFull(handle) == pdTRUE); }
+  inline bool isFull() const {
+    return (xStreamBufferIsFull(handle) == pdTRUE);
+  }
 
  private:
   StreamBufferBase() = default;
@@ -431,7 +446,9 @@ class StreamBufferBase {
    *
    * Deletes a stream buffer and free the allocated memory.
    */
-  ~StreamBufferBase() { vStreamBufferDelete(this->handle); }
+  ~StreamBufferBase() {
+    vStreamBufferDelete(this->handle);
+  }
 
   StreamBufferBase(StreamBufferBase&&) noexcept = default;
   StreamBufferBase& operator=(StreamBufferBase&&) noexcept = default;
@@ -562,5 +579,7 @@ class StaticStreamBuffer : public StreamBufferBase {
 #endif /* configSUPPORT_STATIC_ALLOCATION */
 
 }  // namespace FreeRTOS
+
+#endif /* configUSE_STREAM_BUFFERS */
 
 #endif  // FREERTOS_STREAMBUFFER_HPP

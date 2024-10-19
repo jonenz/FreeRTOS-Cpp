@@ -7,7 +7,9 @@ class MyTask : public FreeRTOS::Task {
 };
 
 // Fake peripherial interface functions
-BaseType_t xQueryPeripheral() { return 0; }
+BaseType_t xQueryPeripheral() {
+  return 0;
+}
 void vProcessPeripheralEvent(BaseType_t xEvent) {}
 constexpr BaseType_t NO_MORE_EVENTS = 0;
 

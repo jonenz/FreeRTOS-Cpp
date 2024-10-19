@@ -12,7 +12,9 @@ class MyTask : public FreeRTOS::Task {
 };
 
 // Fake peripherial interface functions.
-uint32_t ulReadPeripheralInterruptStatus() { return 0; }
+uint32_t ulReadPeripheralInterruptStatus() {
+  return 0;
+}
 void vClearPeripheralInterruptStatus(uint32_t ulStatusRegister) {}
 
 MyTask myTask;
