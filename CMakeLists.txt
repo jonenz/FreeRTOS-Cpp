@@ -2,9 +2,6 @@ cmake_minimum_required(VERSION 3.16)
 
 set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
 
-# CMake Modules Path
-set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${CMAKE_CURRENT_SOURCE_DIR}/cmake")
-
 # C++ Standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -18,17 +15,17 @@ add_subdirectory(${FREERTOS_CPP_PATH})
 
 ## FreeRTOS Kernel Config ##
 # Include the FreeRTOS kernel and configure it for the ARM M0 port so the examples will compile.
-set(FREERTOS_KERNEL_PATH ${CMAKE_CURRENT_LIST_DIR}/FreeRTOS-Kernel)
-set(FREERTOS_KERNEL_PORT ARM_CM0)
-set(FREERTOS_KERNEL_CONFIG ${CMAKE_CURRENT_LIST_DIR}/examples/config)
-set(FREERTOS_KERNEL_HEAP_FILE heap_4)
-include(FreeRTOS-Kernel)
-
-target_compile_options(FreeRTOS-Kernel PUBLIC
+set(FREERTOS_PORT GCC_ARM_CM0 CACHE STRING \"\")
+set(FREERTOS_HEAP 4)
+add_library(freertos_config INTERFACE)
+target_include_directories(freertos_config INTERFACE
+    ${CMAKE_CURRENT_LIST_DIR}/examples/config
+)
+target_compile_options(freertos_config INTERFACE
     "-mcpu=cortex-m0"
     "-fno-exceptions"
 )
-
+add_subdirectory(FreeRTOS-Kernel)
 
 ## Examples' Configuration ##
 add_custom_target(example-all)
