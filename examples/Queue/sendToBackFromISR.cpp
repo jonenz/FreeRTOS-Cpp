@@ -2,8 +2,12 @@
 #include <FreeRTOS/Queue.hpp>
 
 // Fake interface to get data from.
-char getByte() { return 'A'; }
-size_t getBytesRemaining() { return 0; }
+char getByte() {
+  return 'A';
+}
+size_t getBytesRemaining() {
+  return 0;
+}
 
 // Queue that holds 10 characters.
 FreeRTOS::StaticQueue<char, 10> rxQueue;

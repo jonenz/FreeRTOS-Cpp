@@ -24,11 +24,13 @@ Checks:  'cert-*,
           -hicpp-named-parameter,
           -hicpp-no-array-decay,
           -hicpp-no-assembler,
+          -misc-include-cleaner,
+          -performance-enum-size,
           -readability-named-parameter,
+          -readability-redundant-inline-specifier,
           '
 WarningsAsErrors: '*'
 HeaderFilterRegex: ''
-AnalyzeTemporaryDtors: false
 FormatStyle:     google
 CheckOptions:
   - key:             abseil-string-find-startswith.AbseilStringsMatchHeader

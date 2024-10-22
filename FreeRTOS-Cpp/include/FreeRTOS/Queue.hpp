@@ -58,10 +58,16 @@ class QueueBase {
   QueueBase(const QueueBase&) = delete;
   QueueBase& operator=(const QueueBase&) = delete;
 
-  static void* operator new(size_t, void* ptr) { return ptr; }
-  static void* operator new[](size_t, void* ptr) { return ptr; }
   static void* operator new(size_t) = delete;
   static void* operator new[](size_t) = delete;
+
+  static void* operator new(size_t, void* ptr) {
+    return ptr;
+  }
+
+  static void* operator new[](size_t, void* ptr) {
+    return ptr;
+  }
 
   /**
    * Queue.hpp
@@ -72,7 +78,9 @@ class QueueBase {
    * @retval true the handle is not NULL.
    * @retval false the handle is NULL.
    */
-  inline bool isValid() const { return (handle != NULL); }
+  inline bool isValid() const {
+    return (handle != NULL);
+  }
 
   /**
    * Queue.hpp
@@ -355,7 +363,9 @@ class QueueBase {
    *
    * Resets a queue to its original empty state.
    */
-  inline void reset() const { xQueueReset(handle); }
+  inline void reset() const {
+    xQueueReset(handle);
+  }
 
   /**
    * Queue.hpp
@@ -379,7 +389,9 @@ class QueueBase {
    * <b>Example Usage</b>
    * @include Queue/overwrite.cpp
    */
-  inline void overwrite(const T& item) const { xQueueOverwrite(handle, &item); }
+  inline void overwrite(const T& item) const {
+    xQueueOverwrite(handle, &item);
+  }
 
   /**
    * Queue.hpp
@@ -542,7 +554,9 @@ class QueueBase {
    * semaphore or mutex from the register.  If you are not using a kernel aware
    * debugger then this function can be ignored.
    */
-  inline void unregister() const { vQueueUnregisterQueue(handle); }
+  inline void unregister() const {
+    vQueueUnregisterQueue(handle);
+  }
 
   /**
    * Queue.hpp
@@ -559,7 +573,9 @@ class QueueBase {
    * @return If the queue referenced by the queue is in the queue registry, then
    * the text name of the queue is returned, otherwise NULL is returned.
    */
-  inline const char* getName() const { return pcQueueGetName(handle); }
+  inline const char* getName() const {
+    return pcQueueGetName(handle);
+  }
 
   /**
    * Queue.hpp
@@ -620,7 +636,9 @@ class QueueBase {
    * Delete a queue - freeing all the memory allocated for storing of items
    * placed on the queue.
    */
-  ~QueueBase() { vQueueDelete(this->handle); }
+  ~QueueBase() {
+    vQueueDelete(this->handle);
+  }
 
   QueueBase(QueueBase&&) noexcept = default;
   QueueBase& operator=(QueueBase&&) noexcept = default;

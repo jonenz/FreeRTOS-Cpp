@@ -11,7 +11,7 @@ add_library(FreeRTOS-Cpp INTERFACE)
 
 ## Dependencies ##
 target_link_libraries(FreeRTOS-Cpp INTERFACE
-    FreeRTOS-Kernel
+    freertos_kernel
 )
 
 ## Headers ##
