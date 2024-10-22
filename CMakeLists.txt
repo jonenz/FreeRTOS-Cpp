@@ -71,8 +71,6 @@ if (CLANG_TIDY)
     get_target_property(FREERTOS_KERNEL_CONFIG_INCLUDE_DIRS freertos_config INTERFACE_INCLUDE_DIRECTORIES)
     get_target_property(FREERTOS_KERNEL_INCLUDE_DIRS freertos_kernel_include INTERFACE_INCLUDE_DIRECTORIES)
     get_target_property(FREERTOS_KERNEL_PORT_INCLUDE_DIRS freertos_kernel_port_headers INTERFACE_INCLUDE_DIRECTORIES)
-    file(GENERATE OUTPUT port_include_dirs.txt CONTENT "${FREERTOS_KERNEL_PORT_INCLUDE_DIRS}")
-    file(READ ${CMAKE_BINARY_DIR}/port_include_dirs.txt FREERTOS_KERNEL_PORT_INCLUDE_DIRS)
 
     add_custom_target( clang-tidy
         COMMAND clang-tidy
@@ -83,7 +81,7 @@ if (CLANG_TIDY)
         -I ${FREERTOS_CPP_PATH}/include
         -I ${FREERTOS_KERNEL_CONFIG_INCLUDE_DIRS}
         -I ${FREERTOS_KERNEL_INCLUDE_DIRS}
-        -I ${FREERTOS_KERNEL_PORT_INCLUDE_DIRS}
+        -I "$<JOIN:${FREERTOS_KERNEL_PORT_INCLUDE_DIRS},$<SEMICOLON>>"
     )
 endif()
 
