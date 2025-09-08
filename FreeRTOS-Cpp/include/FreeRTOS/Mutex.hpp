@@ -165,6 +165,49 @@ class MutexBase {
     return (xSemaphoreGive(handle) == pdTRUE);
   }
 
+  /**
+   * Mutex.hpp
+   *
+   * @brief Function that calls <tt>xSemaphoreGiveFromISR( SemaphoreHandle_t
+   * xSemaphore, signed BaseType_t *pxHigherPriorityTaskWoken )</tt>
+   *
+   * @see <https://www.freertos.org/a00124.html>
+   *
+   * Function to release a mutex.
+   *
+   * This macro can be used from an ISR.
+   *
+   * @param higherPriorityTaskWoken giveFromISR() will set
+   * higherPriorityTaskWoken to true if giving the mutex caused a task to
+   * unblock, and the unblocked task has a priority higher than the currently
+   * running task. If giveFromISR() sets this value to true then a context
+   * switch should be requested before the interrupt is exited.
+   * @retval true If the mutex was successfully given.
+   * @retval false Otherwise.
+   */
+  inline bool unlockFromISR(bool& higherPriorityTaskWoken) const {
+    BaseType_t taskWoken = pdFALSE;
+    const bool result = (xSemaphoreGiveFromISR(handle, &taskWoken) == pdTRUE);
+    if (taskWoken == pdTRUE) {
+      higherPriorityTaskWoken = true;
+    }
+    return result;
+  }
+
+  /**
+   * Mutex.hpp
+   *
+   * @brief Function that calls <tt>xSemaphoreGiveFromISR( SemaphoreHandle_t
+   * xSemaphore, signed BaseType_t *pxHigherPriorityTaskWoken )</tt>
+   *
+   * @see <https://www.freertos.org/a00124.html>
+   *
+   * @overload
+   */
+  inline bool unlockFromISR() const {
+    return (xSemaphoreGiveFromISR(handle, NULL) == pdTRUE);
+  }
+
  private:
   MutexBase() = default;
 
