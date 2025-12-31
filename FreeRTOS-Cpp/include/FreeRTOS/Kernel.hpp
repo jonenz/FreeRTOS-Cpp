@@ -163,6 +163,25 @@ inline void yield() {
 /**
  * Kernel.hpp
  *
+ * @brief Function that calls <tt>portYIELD_FROM_ISR()</tt> to request a context
+ * switch from an ISR.
+ *
+ * @see <https://www.freertos.org/a00119.html> (portYIELD_FROM_ISR)
+ *
+ * This function is intended to be used at the end of an interrupt service
+ * routine (ISR). It requests a context switch if calling an ISR-safe FreeRTOS
+ * API function caused a higher-priority task to unblock.
+ *
+ * @param higherPriorityTaskWoken Set to true by the ISR-safe API wrapper if a
+ * higher-priority task was woken and a context switch should be performed.
+ */
+inline void yieldFromISR(bool higherPriorityTaskWoken) {
+  portYIELD_FROM_ISR(higherPriorityTaskWoken ? pdTRUE : pdFALSE);
+}
+
+/**
+ * Kernel.hpp
+ *
  * @brief Function that calls <tt>taskENTER_CRITICAL()</tt>
  *
  * @see <https://www.freertos.org/taskENTER_CRITICAL_taskEXIT_CRITICAL.html>
