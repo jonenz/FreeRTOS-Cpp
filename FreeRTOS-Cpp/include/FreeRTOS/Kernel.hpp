@@ -166,7 +166,7 @@ inline void yield() {
  * @brief Function that calls <tt>portYIELD_FROM_ISR()</tt> to request a context
  * switch from an ISR.
  *
- * @see <https://www.freertos.org/a00119.html> (portYIELD_FROM_ISR)
+ * @see <https://www.freertos.org/Why-FreeRTOS/FAQs/ISRs>
  *
  * This function is intended to be used at the end of an interrupt service
  * routine (ISR). It requests a context switch if calling an ISR-safe FreeRTOS
