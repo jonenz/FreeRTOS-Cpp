@@ -112,6 +112,93 @@ class TaskBase {
     taskFunction();
   };
 
+#if (INCLUDE_vTaskDelay == 1)
+  /**
+   * Task.hpp
+   *
+   * @brief Function that calls <tt>void vTaskDelay( const TickType_t
+   * xTicksToDelay )</tt>
+   *
+   * @see <https://www.freertos.org/a00127.html>
+   *
+   * INCLUDE_vTaskDelay must be defined as 1 for this function to be available.
+   * See the configuration section for more information.
+   *
+   * Delay a task for a given number of ticks.  The actual time that the task
+   * remains blocked depends on the tick rate. The constant portTICK_PERIOD_MS
+   * can be used to calculate real time from the tick rate - with the resolution
+   * of one tick period.
+   *
+   * delay() specifies a time at which the task wishes to unblock relative to
+   * the time at which delay() is called.  For example, specifying a block
+   * period of 100 ticks will cause the task to unblock 100 ticks after delay()
+   * is called. delay() does not therefore provide a good method of controlling
+   * the frequency of a periodic task as the path taken through the code, as
+   * well as other task and interrupt activity, will affect the frequency at
+   * which delay() gets called and therefore the time at which the task next
+   * executes.  See delayUntil() for an alternative API function designed to
+   * facilitate fixed frequency execution.  It does this by specifying an
+   * absolute time (rather than a relative time) at which the calling task
+   * should unblock.
+   *
+   * @param ticksToDelay The amount of time, in tick periods, that the task
+   * should block.
+   *
+   * <b>Example Usage</b>
+   * @include Task/delay.cpp
+   */
+  inline static void delay(const TickType_t ticksToDelay = 0) {
+    vTaskDelay(ticksToDelay);
+  }
+#endif /* INCLUDE_vTaskDelay */
+
+#if (INCLUDE_xTaskDelayUntil == 1)
+  /**
+   * Task.hpp
+   *
+   * @brief Function that calls <tt>BaseType_t xTaskDelayUntil( TickType_t
+   * *pxPreviousWakeTime, const TickType_t xTimeIncrement )</tt>
+   *
+   * @see <https://www.freertos.org/xtaskdelayuntiltask-control.html>
+   *
+   * INCLUDE_xTaskDelayUntil must be defined as 1 for this function to be
+   * available.  See the configuration section for more information.
+   *
+   * Delay a task until a specified time.  This function can be used by periodic
+   * tasks to ensure a constant execution frequency.
+   *
+   * This function differs from delay() in one important aspect:  delay() will
+   * cause a task to block for the specified number of ticks from the time delay
+   * () is called.  It is therefore difficult to use delay() by itself to
+   * generate a fixed execution frequency as the time between a task starting to
+   * execute and that task calling delay() may not be fixed [the task may take a
+   * different path though the code between calls, or may get interrupted or
+   * preempted a different number of times each time it executes].
+   *
+   * Whereas delay() specifies a wake time relative to the time at which the
+   * function is called, delayUntil() specifies the absolute (exact) time at
+   * which it wishes to unblock.
+   *
+   * The function pdMS_TO_TICKS() can be used to calculate the number of ticks
+   * from a time specified in milliseconds with a resolution of one tick period.
+   *
+   * @param timeIncrement The cycle time period. The task will be unblocked at
+   * time (previousWakeTime + timeIncrement). Calling delayUntil() with the same
+   * timeIncrement parameter value will cause the task to execute with a fixed
+   * interval period.
+   * @return true If the task way delayed.
+   * @return false Otherwise.  A task will not be delayed if the next expected
+   * wake time is in the past.
+   *
+   * <b>Example Usage</b>
+   * @include Task/delayUntil.cpp
+   */
+  inline static bool delayUntil(TaskBase& task,
+                                const TickType_t timeIncrement = 0) {
+    return (xTaskDelayUntil(&task.previousWakeTime, timeIncrement) == pdTRUE);
+  }
+#endif /* INCLUDE_xTaskDelayUntil */
+
 #if (INCLUDE_uxTaskPriorityGet == 1)
   /**
    * Task.hpp
@@ -1123,46 +1210,6 @@ class TaskBase {
    * the user.
    */
   virtual void taskFunction() = 0;
-
-#if (INCLUDE_vTaskDelay == 1)
-  /**
-   * Task.hpp
-   *
-   * @brief Function that calls <tt>void vTaskDelay( const TickType_t
-   * xTicksToDelay )</tt>
-   *
-   * @see <https://www.freertos.org/a00127.html>
-   *
-   * INCLUDE_vTaskDelay must be defined as 1 for this function to be available.
-   * See the configuration section for more information.
-   *
-   * Delay a task for a given number of ticks.  The actual time that the task
-   * remains blocked depends on the tick rate. The constant portTICK_PERIOD_MS
-   * can be used to calculate real time from the tick rate - with the resolution
-   * of one tick period.
-   *
-   * delay() specifies a time at which the task wishes to unblock relative to
-   * the time at which delay() is called.  For example, specifying a block
-   * period of 100 ticks will cause the task to unblock 100 ticks after delay()
-   * is called. delay() does not therefore provide a good method of controlling
-   * the frequency of a periodic task as the path taken through the code, as
-   * well as other task and interrupt activity, will affect the frequency at
-   * which delay() gets called and therefore the time at which the task next
-   * executes.  See delayUntil() for an alternative API function designed to
-   * facilitate fixed frequency execution.  It does this by specifying an
-   * absolute time (rather than a relative time) at which the calling task
-   * should unblock.
-   *
-   * @param ticksToDelay The amount of time, in tick periods, that the task
-   * should block.
-   *
-   * <b>Example Usage</b>
-   * @include Task/delay.cpp
-   */
-  inline static void delay(const TickType_t ticksToDelay = 0) {
-    vTaskDelay(ticksToDelay);
-  }
-#endif /* INCLUDE_vTaskDelay */
 
 #if (INCLUDE_xTaskDelayUntil == 1)
   /**

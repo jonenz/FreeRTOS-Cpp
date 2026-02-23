@@ -18,3 +18,12 @@ void MyTask::taskFunction() {
     delay(xDelay);
   }
 }
+
+class MyDriverClass {
+ public:
+  void doSomething() {
+    // Some driver code that will delay the calling task for 100ms.
+    constexpr TickType_t xDelay = 100 / portTICK_PERIOD_MS;
+    FreeRTOS::Task::delay(xDelay);
+  }
+};
