@@ -1,4 +1,5 @@
 <map id="FreeRTOS::CountingSemaphore" name="FreeRTOS::CountingSemaphore">
-<area shape="rect" id="node1" title="Class that encapsulates the functionality of a FreeRTOS counting semaphore." alt="" coords="5,80,229,107"/>
-<area shape="rect" id="node2" href="$classFreeRTOS_1_1SemaphoreBase.html" title="Base class that provides the standard semaphore interface to FreeRTOS::BinarySemaphore,..." alt="" coords="18,5,217,32"/>
+<area shape="rect" id="Node000001" title="Class that encapsulates the functionality of a FreeRTOS counting semaphore." alt="" coords="5,79,229,104"/>
+<area shape="rect" id="Node000002" href="$classFreeRTOS_1_1SemaphoreBase.html" title="Base class that provides the standard semaphore interface to FreeRTOS::BinarySemaphore,..." alt="" coords="18,5,217,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,44,120,79,115,79,115,44"/>
 </map>

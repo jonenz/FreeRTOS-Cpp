@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['peek_72',['peek',['../classFreeRTOS_1_1QueueBase.html#a9871e7011ac00cf50e12cbf4a41d2201',1,'FreeRTOS::QueueBase']]],
-  ['peekfromisr_73',['peekFromISR',['../classFreeRTOS_1_1QueueBase.html#a33589c7311a79aa47488ab8eabe18782',1,'FreeRTOS::QueueBase']]],
-  ['previouswaketime_74',['previousWakeTime',['../classFreeRTOS_1_1TaskBase.html#ac887ed989c103a8c53c477591fc1f39e',1,'FreeRTOS::TaskBase']]]
+  ['overwrite_0',['overwrite',['../classFreeRTOS_1_1QueueBase.html#acf4974f07222576f4bbb0e4af9448ff9',1,'FreeRTOS::QueueBase']]],
+  ['overwritefromisr_1',['overwritefromisr',['../classFreeRTOS_1_1QueueBase.html#a39366d8cd04e9d8d08ec887564fecbbe',1,'FreeRTOS::QueueBase::overwriteFromISR(bool &amp;higherPriorityTaskWoken, const T &amp;item) const'],['../classFreeRTOS_1_1QueueBase.html#aa7a9fba26bf6b5d4521fb5601111ccce',1,'FreeRTOS::QueueBase::overwriteFromISR(const T &amp;item) const']]]
 ];

@@ -1,8 +1,13 @@
 <map id="FreeRTOS::MutexBase" name="FreeRTOS::MutexBase">
-<area shape="rect" id="node1" title="Base class that provides the standard mutex interface to FreeRTOS::Mutex, FreeRTOS::StaticMutex,..." alt="" coords="195,5,360,32"/>
-<area shape="rect" id="node2" href="$classFreeRTOS_1_1Mutex.html" title="Class that encapsulates the functionality of a FreeRTOS mutex." alt="" coords="5,80,139,107"/>
-<area shape="rect" id="node3" href="$classFreeRTOS_1_1RecursiveMutexBase.html" title="Base class that provides the recursive mutex interface to FreeRTOS::RecursiveMutex and FreeRTOS::Stat..." alt="" coords="163,80,392,107"/>
-<area shape="rect" id="node6" href="$classFreeRTOS_1_1StaticMutex.html" title="Class that encapsulates the functionality of a FreeRTOS mutex." alt="" coords="416,80,587,107"/>
-<area shape="rect" id="node4" href="$classFreeRTOS_1_1RecursiveMutex.html" title="Class that encapsulates the functionality of a FreeRTOS recursive mutex." alt="" coords="68,162,265,189"/>
-<area shape="rect" id="node5" href="$classFreeRTOS_1_1StaticRecursiveMutex.html" title="Class that encapsulates the functionality of a FreeRTOS recursive mutex." alt="" coords="290,155,483,196"/>
+<area shape="rect" id="Node000001" title="Base class that provides the standard mutex interface to FreeRTOS::Mutex, FreeRTOS::StaticMutex,..." alt="" coords="195,5,360,31"/>
+<area shape="rect" id="Node000002" href="$classFreeRTOS_1_1Mutex.html" title="Class that encapsulates the functionality of a FreeRTOS mutex." alt="" coords="5,79,139,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,38,106,81,104,76,231,33"/>
+<area shape="rect" id="Node000003" href="$classFreeRTOS_1_1RecursiveMutexBase.html" title="Base class that provides the recursive mutex interface to FreeRTOS::RecursiveMutex and FreeRTOS::Stat..." alt="" coords="163,79,392,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="280,44,280,79,275,79,275,44"/>
+<area shape="rect" id="Node000006" href="$classFreeRTOS_1_1StaticMutex.html" title="Class that encapsulates the functionality of a FreeRTOS mutex." alt="" coords="416,79,587,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="327,32,466,76,464,81,325,37"/>
+<area shape="rect" id="Node000004" href="$classFreeRTOS_1_1RecursiveMutex.html" title="Class that encapsulates the functionality of a FreeRTOS recursive mutex." alt="" coords="68,159,265,185"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="251,114,185,161,182,157,248,110"/>
+<area shape="rect" id="Node000005" href="$classFreeRTOS_1_1StaticRecursiveMutex.html" title="Class that encapsulates the functionality of a FreeRTOS recursive mutex." alt="" coords="290,152,483,192"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="306,110,362,150,359,154,303,114"/>
 </map>

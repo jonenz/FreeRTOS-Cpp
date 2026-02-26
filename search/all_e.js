@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['queue_75',['Queue',['../classFreeRTOS_1_1Queue.html',1,'FreeRTOS::Queue&lt; T &gt;'],['../classFreeRTOS_1_1Queue.html#a63cab61a5b7a6296fff9e1b3f12e30eb',1,'FreeRTOS::Queue::Queue()']]],
-  ['queuebase_76',['QueueBase',['../classFreeRTOS_1_1QueueBase.html',1,'FreeRTOS::QueueBase&lt; T &gt;'],['../classFreeRTOS_1_1QueueBase.html#a9f4d54a95c2bef76677d272d6dee5243',1,'FreeRTOS::QueueBase::QueueBase()']]]
+  ['peek_0',['peek',['../classFreeRTOS_1_1QueueBase.html#adfa706936924fb3a7b46a0682b339d33',1,'FreeRTOS::QueueBase']]],
+  ['peekfromisr_1',['peekFromISR',['../classFreeRTOS_1_1QueueBase.html#a38cf6431f0d648fe4605c2b9a35e09be',1,'FreeRTOS::QueueBase']]],
+  ['previouswaketime_2',['previousWakeTime',['../classFreeRTOS_1_1TaskBase.html#ac887ed989c103a8c53c477591fc1f39e',1,'FreeRTOS::TaskBase']]]
 ];

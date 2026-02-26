@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wait_134',['wait',['../classFreeRTOS_1_1EventGroupBase.html#a756358bbe5cd9614178b7edc8f8389b6',1,'FreeRTOS::EventGroupBase']]]
+  ['versionnumber_0',['versionNumber',['../namespaceFreeRTOS_1_1Kernel.html#a3209a978fd23ad0dec96ce90c8b88f1f',1,'FreeRTOS::Kernel']]]
 ];

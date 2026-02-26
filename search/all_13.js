@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['versionnumber_133',['versionNumber',['../namespaceFreeRTOS_1_1Kernel.html#a3209a978fd23ad0dec96ce90c8b88f1f',1,'FreeRTOS::Kernel']]]
+  ['unlock_0',['unlock',['../classFreeRTOS_1_1MutexBase.html#aabb088ff893bdce13d7db1f901ef3151',1,'FreeRTOS::MutexBase::unlock()'],['../classFreeRTOS_1_1RecursiveMutexBase.html#a00453bed1e4c07412293cc13db504c6a',1,'FreeRTOS::RecursiveMutexBase::unlock()']]],
+  ['unregister_1',['unregister',['../classFreeRTOS_1_1QueueBase.html#aa51ec0de8264da31fdaa6b348694024e',1,'FreeRTOS::QueueBase']]],
+  ['usage_2',['Usage',['../index.html#autotoc_md6',1,'']]]
 ];

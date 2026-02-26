@@ -1,4 +1,5 @@
 <map id="FreeRTOS::StaticEventGroup" name="FreeRTOS::StaticEventGroup">
-<area shape="rect" id="node1" title="Class that encapsulates the functionality of a FreeRTOS event group." alt="" coords="5,80,211,107"/>
-<area shape="rect" id="node2" href="$classFreeRTOS_1_1EventGroupBase.html" title="Base class that provides the standard event group interface to FreeRTOS::EventGroup and FreeRTOS::Sta..." alt="" coords="8,5,208,32"/>
+<area shape="rect" id="Node000001" title="Class that encapsulates the functionality of a FreeRTOS event group." alt="" coords="5,79,211,104"/>
+<area shape="rect" id="Node000002" href="$classFreeRTOS_1_1EventGroupBase.html" title="Base class that provides the standard event group interface to FreeRTOS::EventGroup and FreeRTOS::Sta..." alt="" coords="8,5,208,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,44,111,79,105,79,105,44"/>
 </map>

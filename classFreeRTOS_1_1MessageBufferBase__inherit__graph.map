@@ -1,5 +1,7 @@
 <map id="FreeRTOS::MessageBufferBase" name="FreeRTOS::MessageBufferBase">
-<area shape="rect" id="node1" title="Base class that provides the standard message buffer interface to FreeRTOS::MessageBuffer and FreeRTO..." alt="" coords="115,5,336,32"/>
-<area shape="rect" id="node2" href="$classFreeRTOS_1_1MessageBuffer.html" title="Class that encapsulates the functionality of a FreeRTOS message buffer." alt="" coords="5,80,195,107"/>
-<area shape="rect" id="node3" href="$classFreeRTOS_1_1StaticMessageBuffer.html" title="Class that encapsulates the functionality of a FreeRTOS message buffer." alt="" coords="219,80,485,107"/>
+<area shape="rect" id="Node000001" title="Base class that provides the standard message buffer interface to FreeRTOS::MessageBuffer and FreeRTO..." alt="" coords="115,5,336,31"/>
+<area shape="rect" id="Node000002" href="$classFreeRTOS_1_1MessageBuffer.html" title="Class that encapsulates the functionality of a FreeRTOS message buffer." alt="" coords="5,79,195,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,40,122,81,119,76,192,35"/>
+<area shape="rect" id="Node000003" href="$classFreeRTOS_1_1StaticMessageBuffer.html" title="Class that encapsulates the functionality of a FreeRTOS message buffer." alt="" coords="219,79,485,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="259,35,333,76,330,81,256,40"/>
 </map>

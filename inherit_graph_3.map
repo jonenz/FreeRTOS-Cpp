@@ -1,5 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classFreeRTOS_1_1QueueBase.html" title="Base class that provides the standard queue interface to FreeRTOS::Queue and FreeRTOS::StaticQueue." alt="" coords="5,35,209,61"/>
-<area shape="rect" id="node2" href="$classFreeRTOS_1_1Queue.html" title="Class that encapsulates the functionality of a FreeRTOS queue." alt="" coords="257,5,429,32"/>
-<area shape="rect" id="node3" href="$classFreeRTOS_1_1StaticQueue.html" title="Class that encapsulates the functionality of a FreeRTOS queue." alt="" coords="258,57,429,98"/>
+<area shape="rect" id="Node000000" href="$classFreeRTOS_1_1QueueBase.html" title="Base class that provides the standard queue interface to FreeRTOS::Queue and FreeRTOS::StaticQueue." alt="" coords="5,35,209,60"/>
+<area shape="rect" id="Node000001" href="$classFreeRTOS_1_1Queue.html" title="Class that encapsulates the functionality of a FreeRTOS queue." alt="" coords="257,5,429,31"/>
+<area shape="poly" id="edge10_Node000000_Node000001" title=" " alt="" coords="223,30,257,26,258,31,223,36"/>
+<area shape="rect" id="Node000002" href="$classFreeRTOS_1_1StaticQueue.html" title="Class that encapsulates the functionality of a FreeRTOS queue." alt="" coords="258,55,429,95"/>
+<area shape="poly" id="edge11_Node000000_Node000002" title=" " alt="" coords="224,58,258,63,257,68,223,64"/>
 </map>

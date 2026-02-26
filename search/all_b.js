@@ -1,13 +1,9 @@
 var searchData=
 [
-  ['notify_60',['notify',['../classFreeRTOS_1_1TaskBase.html#a1eeacd6a189750c32bc5afec7437cf47',1,'FreeRTOS::TaskBase']]],
-  ['notifyandquery_61',['notifyAndQuery',['../classFreeRTOS_1_1TaskBase.html#a69b118731dacb2d0e7a62b2387d8a7ed',1,'FreeRTOS::TaskBase']]],
-  ['notifyandqueryfromisr_62',['notifyAndQueryFromISR',['../classFreeRTOS_1_1TaskBase.html#abd3cd604ac587b86537692f4765af246',1,'FreeRTOS::TaskBase::notifyAndQueryFromISR(bool &amp;higherPriorityTaskWoken, const NotifyAction action, const NotificationBits value=0, const UBaseType_t index=0) const'],['../classFreeRTOS_1_1TaskBase.html#a2d18745b14f35d740f347b2b3c93e58f',1,'FreeRTOS::TaskBase::notifyAndQueryFromISR(const NotifyAction action, const NotificationBits value=0, const UBaseType_t index=0) const']]],
-  ['notifyfromisr_63',['notifyFromISR',['../classFreeRTOS_1_1TaskBase.html#a39240e97fa9685c35ce7bbcafed62963',1,'FreeRTOS::TaskBase::notifyFromISR(bool &amp;higherPriorityTaskWoken, const NotifyAction action, const NotificationBits value=0, const UBaseType_t index=0) const'],['../classFreeRTOS_1_1TaskBase.html#a0f94c6898f35f28e1e275c12f4ebae42',1,'FreeRTOS::TaskBase::notifyFromISR(const NotifyAction action, const NotificationBits value=0, const UBaseType_t index=0) const']]],
-  ['notifygive_64',['notifyGive',['../classFreeRTOS_1_1TaskBase.html#abadbaa9d344e1ae0f1d9845fdd116948',1,'FreeRTOS::TaskBase']]],
-  ['notifygivefromisr_65',['notifyGiveFromISR',['../classFreeRTOS_1_1TaskBase.html#acbde3b2a52920a5b9bdf834c025add80',1,'FreeRTOS::TaskBase::notifyGiveFromISR(bool &amp;higherPriorityTaskWoken, const UBaseType_t index=0) const'],['../classFreeRTOS_1_1TaskBase.html#a1df32c73cb167908d4a43f4c4304a073',1,'FreeRTOS::TaskBase::notifyGiveFromISR(const UBaseType_t index=0) const']]],
-  ['notifystateclear_66',['notifyStateClear',['../classFreeRTOS_1_1TaskBase.html#a16a76888031fce97753afe12b84286ee',1,'FreeRTOS::TaskBase']]],
-  ['notifytake_67',['notifyTake',['../classFreeRTOS_1_1TaskBase.html#ab7802d619a9c65584dba593d69066e1b',1,'FreeRTOS::TaskBase']]],
-  ['notifyvalueclear_68',['notifyValueClear',['../classFreeRTOS_1_1TaskBase.html#a756546c6bd6fffafdff287e5b8c72102',1,'FreeRTOS::TaskBase']]],
-  ['notifywait_69',['notifyWait',['../classFreeRTOS_1_1TaskBase.html#a6155099d7c8440bb189a34a45741eea3',1,'FreeRTOS::TaskBase']]]
+  ['messagebuffer_0',['messagebuffer',['../classFreeRTOS_1_1MessageBuffer.html',1,'FreeRTOS::MessageBuffer'],['../classFreeRTOS_1_1MessageBuffer.html#aa30f0466972c7b85eb0b010d11850d6c',1,'FreeRTOS::MessageBuffer::MessageBuffer()']]],
+  ['messagebufferbase_1',['MessageBufferBase',['../classFreeRTOS_1_1MessageBufferBase.html',1,'FreeRTOS']]],
+  ['messageswaiting_2',['messagesWaiting',['../classFreeRTOS_1_1QueueBase.html#a8a7b0773b1557fd81393ba94a7dac728',1,'FreeRTOS::QueueBase']]],
+  ['messageswaitingfromisr_3',['messagesWaitingFromISR',['../classFreeRTOS_1_1QueueBase.html#a5ee16831d27efcce9ea4699fdf726afd',1,'FreeRTOS::QueueBase']]],
+  ['mutex_4',['mutex',['../classFreeRTOS_1_1Mutex.html',1,'FreeRTOS::Mutex'],['../classFreeRTOS_1_1Mutex.html#a31df9a3d06ee22ed89231c0bc9e589e8',1,'FreeRTOS::Mutex::Mutex()']]],
+  ['mutexbase_5',['MutexBase',['../classFreeRTOS_1_1MutexBase.html',1,'FreeRTOS']]]
 ];

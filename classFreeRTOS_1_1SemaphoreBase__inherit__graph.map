@@ -1,7 +1,11 @@
 <map id="FreeRTOS::SemaphoreBase" name="FreeRTOS::SemaphoreBase">
-<area shape="rect" id="node1" title="Base class that provides the standard semaphore interface to FreeRTOS::BinarySemaphore,..." alt="" coords="5,81,204,108"/>
-<area shape="rect" id="node2" href="$classFreeRTOS_1_1BinarySemaphore.html" title="Class that encapsulates the functionality of a FreeRTOS binary semaphore." alt="" coords="271,5,479,32"/>
-<area shape="rect" id="node3" href="$classFreeRTOS_1_1CountingSemaphore.html" title="Class that encapsulates the functionality of a FreeRTOS counting semaphore." alt="" coords="263,56,487,83"/>
-<area shape="rect" id="node4" href="$classFreeRTOS_1_1StaticBinarySemaphore.html" title="Class that encapsulates the functionality of a FreeRTOS binary semaphore." alt="" coords="252,107,497,133"/>
-<area shape="rect" id="node5" href="$classFreeRTOS_1_1StaticCountingSemaphore.html" title=" " alt="" coords="281,158,468,199"/>
+<area shape="rect" id="Node000001" title="Base class that provides the standard semaphore interface to FreeRTOS::BinarySemaphore,..." alt="" coords="5,80,204,105"/>
+<area shape="rect" id="Node000002" href="$classFreeRTOS_1_1BinarySemaphore.html" title="Class that encapsulates the functionality of a FreeRTOS binary semaphore." alt="" coords="271,5,479,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,73,251,39,300,28,301,33,253,45,152,78"/>
+<area shape="rect" id="Node000003" href="$classFreeRTOS_1_1CountingSemaphore.html" title="Class that encapsulates the functionality of a FreeRTOS counting semaphore." alt="" coords="263,55,487,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,79,262,75,262,81,218,85"/>
+<area shape="rect" id="Node000004" href="$classFreeRTOS_1_1StaticBinarySemaphore.html" title="Class that encapsulates the functionality of a FreeRTOS binary semaphore." alt="" coords="252,104,497,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="218,100,252,103,251,108,217,105"/>
+<area shape="rect" id="Node000005" href="$classFreeRTOS_1_1StaticCountingSemaphore.html" title=" " alt="" coords="281,154,468,194"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="157,107,253,138,299,151,297,157,251,143,155,112"/>
 </map>
